@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --darkBlue: #012F34;
+  --orange: #D8A227;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  //color: var(--foreground);
+  //background: var(--background);
+  background-color: var(--darkBlue);
+  color: #fff;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+.input {
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid #979797;
+  padding: 16px 14px;
+  transition: all ease-out 300ms;
+}
+
+.input:focus {
+  border-color: var(--orange);
+  color: var(--orange);
+  &::placeholder {
+    color: var(--orange);
+  }
+}
+
+.main_section_icon_left{
+  @apply absolute -left-[210px] top-[50px];
+}
+.main_section_icon_right{
+  @apply absolute -bottom-[100px] right-[200px];
+}
+
+.why_us_title {
+  @apply font-medium text-2xl border-b-[4px] border-[#2C6269] pb-[12px] text-[#004040];
+}
+
+.title {
+  @apply text-5xl font-bold;
+}
