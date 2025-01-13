@@ -1,5 +1,4 @@
 import CardItem from "@/app/(views)/clients/components/CardItem";
-import Image from "next/image";
 import {MiniOrnament} from "@/components/Icons";
 
 const SectionClients = () => {

@@ -1,7 +1,6 @@
 "use client"
 
 import {useState} from "react";
-import {YellowCircleIcon, YellowCircleIcon2} from "@/components/Icons";
 
 interface FAQItem {
     title: string;
@@ -37,8 +36,6 @@ const FAQ: React.FC = () => {
     return (
         <section className={"bg-white text-black overflow-hidden"}>
             <div className={"mContainer relative"}>
-                {/*<div className={"absolute -left-[120px] -top-[20px]"}><YellowCircleIcon2/></div>*/}
-                {/*<div className={"absolute -right-[30px] top-[260px]"}><YellowCircleIcon/></div>*/}
 
                 <div className="max-w-3xl mx-auto p-4 pt-[50px] pb-[70px]">
                     <h2
@@ -48,7 +45,6 @@ const FAQ: React.FC = () => {
                         FAQ
                     </h2>
                     <div
-                        // className="space-y-4 text-3xl border-t border-black pt-[15px]"
                         className="space-y-4 text-3xl border-t border-black pt-[10px] sm:w-[550px] md:w-[600px] lg:w-[800px] xl:w-[900px] sm:mx-auto"
                     >
                         {faqItems.map((item, index) => (
@@ -57,7 +53,6 @@ const FAQ: React.FC = () => {
                                 className="border-b border-black pb-[10px]"
                             >
                                 <button
-                                    // className="w-full text-left text-3xl hover:text-gray-900 focus:outline-none"
                                     className="w-full text-left text-xl hover:text-gray-900 focus:outline-none lg:text-2xl xl:text-3xl"
                                     onClick={() => toggleFAQ(index)}
                                 >

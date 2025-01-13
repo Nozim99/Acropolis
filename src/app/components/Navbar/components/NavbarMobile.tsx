@@ -1,5 +1,4 @@
 import Image from "next/image";
-import {MenuIcon} from "@/components/Icons";
 import NavbarModal from "./NavbarModal";
 
 

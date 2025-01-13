@@ -28,7 +28,7 @@ const SectionLocation = () => {
                     <div className={"flex items-center font-bold text-2xl gap-x-[20px] mb-[70px]"}>
                         <LocationIcon/>
                         <span className={"leading-9"}>
-                            Республика Узбекистан, г. Ташкент 1-й Проезд Дархан, д. 7, БЦ "TUT"
+                            Республика Узбекистан, г. Ташкент 1-й Проезд Дархан, д. 7, БЦ {'"'}TUT{'"'}
                         </span>
                     </div>
                     <h4 className={"font-bold text-3xl mb-[24px]"}>
