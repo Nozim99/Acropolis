@@ -10,17 +10,19 @@ import FAQSection from "@/app/components/FAQSection";
 
 
 export default function Home() {
-  return (
-    <div>
-      <MainSection />
-      <AboutCompany />
-      <FactsAboutUs />
-      <SolutionSection />
-      <ServicesSection />
-      <PartnersSection />
-      <ClientsSection />
-      <ConsultationSection />
-      <FAQSection />
-    </div>
-  );
+    return (
+        <div>
+            <MainSection/>
+            <AboutCompany/>
+            <FactsAboutUs/>
+            <SolutionSection/>
+            <ServicesSection/>
+            {/*<ClientsSection />*/}
+            <div className={"overflow-hidden"}>
+                <PartnersSection/>
+                <ConsultationSection/>
+            </div>
+            <FAQSection />
+        </div>
+    );
 }

@@ -5,7 +5,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --darkBlue: #012F34;
+  //--darkBlue: #012F34;
+  --darkBlue: #004040;
   --orange: #D8A227;
 }
 
@@ -25,32 +26,120 @@ body {
 }
 
 .input {
-  outline: none;
-  background-color: transparent;
-  border-bottom: 1px solid #979797;
-  padding: 16px 14px;
-  transition: all ease-out 300ms;
+  //@apply outline-none bg-transparent border-b border-[#979797] px-[14px] py-[16px] transition-all duration-300 ease-out;
+  @apply outline-none bg-transparent border-b border-[#979797] px-[8px] py-[10px] transition-all duration-300 ease-out md:py-[12px] md:px-[10px] lg:px-[12px]
+  lg:py-[14px] xl:px-[14px] xl:py-[16px];
 }
 
 .input:focus {
   border-color: var(--orange);
   color: var(--orange);
+
   &::placeholder {
     color: var(--orange);
   }
 }
 
-.main_section_icon_left{
+.main_section_icon_left {
   @apply absolute -left-[210px] top-[50px];
 }
-.main_section_icon_right{
+
+.main_section_icon_right {
   @apply absolute -bottom-[100px] right-[200px];
 }
 
 .why_us_title {
-  @apply font-medium text-2xl border-b-[4px] border-[#2C6269] pb-[12px] text-[#004040];
+  @apply font-medium text-2xl border-b-[4px] border-[#2C6269] pb-[12px] text-[#004040] md:text-[1.18rem] lg:text-2xl;
 }
 
 .title {
-  @apply text-5xl font-bold;
+  //@apply text-5xl font-bold;
+  @apply text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl;
+}
+
+.card {
+  .img, .card_title {
+    transition: all ease-in 400ms;
+  }
+
+  .card_description {
+    transition: all ease-out 400ms 400ms;
+  }
+
+
+  &:hover {
+    .img {
+      opacity: 0;
+      right: -350px;
+      scale: 0.5;
+    }
+
+    .card_title {
+      top: 100px;
+      opacity: 0;
+      scale: 0.5;
+    }
+
+    .card_description {
+      top: 18px;
+      left: 18px;
+      opacity: 1;
+      @apply scale-100;
+    }
+  }
+
+  &:not(:hover) {
+    .img,
+    .card_title {
+      transition-delay: 400ms;
+    }
+
+    .card_description {
+      transition-delay: 0ms;
+    }
+  }
+}
+
+.prices_categories_bg {
+  background: linear-gradient(to right, #D8A227 77%, white);
+}
+
+.description_modal {
+  opacity: 0;
+  scale: 0.8;
+  animation: show 300ms ease-in forwards;
+}
+
+.description_modal_bg {
+  opacity: 0;
+  animation: simple_show 400ms ease-out forwards;
+}
+
+
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 0.8;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes simple_show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mContainer {
+  @apply container mx-auto px-[10px] sm:px-[20px];
+}
+
+.brd {
+  border: 1px solid red !important;
 }
