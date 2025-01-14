@@ -22,8 +22,5 @@ const NavbarMobile = () => {
         </>
     );
 };
-// 153 x 70
-export default NavbarMobile;
 
-// 150 - 100
-// 70 - x
+export default NavbarMobile;

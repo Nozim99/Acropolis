@@ -25,18 +25,19 @@ const SectionCategories = () => {
 
 
     return (
-        <section className={"bg-white relative"}>
-            <div className={"absolute top-0 bottom-0 left-0 w-[45%] prices_categories_bg"}></div>
+        <section className={"bg-[var(--darkBlue)] lg:bg-white relative "}>
+            <div className={"absolute top-0 bottom-0 left-0 w-[45%] prices_categories_bg hidden lg:block"}></div>
+            <div
+                className={"mContainer relative flex justify-center gap-x-[25px] pt-[30px] sm:pt-[35px] md:pt-[43px] pb-[20px]"}>
 
-            <div className={"container mx-auto relative flex justify-center gap-x-[25px] pt-[43px] pb-[20px]"}>
-                <div className={"flex flex-col absolute top-full gap-y-[4px] -right-[30px]"}>
+                <div className={"flex-col absolute top-full gap-y-[4px] -right-[90px] hidden lg:flex"}>
                     {Array(15).fill(0).map((_, i) => (
                         <MiniOrnament key={i}/>
                     ))}
                 </div>
 
 
-                <div className={"flex justify-end flex-1 items-end"}>
+                <div className={"hidden lg:flex justify-end flex-1 items-end"}>
                     <Image
                         className={"bg-[var(--darkBlue)] rounded-full mr-[120px]"}
                         src={"/assets/prices-categories.png"}
@@ -47,7 +48,9 @@ const SectionCategories = () => {
                 </div>
 
                 <div className={"flex-1"}>
-                    <h2 className={"title text-[var(--darkBlue)] mb-[45px]"}>УСЛУГИ</h2>
+                    <h2 className={"title text-center lg:text-start lg:text-[var(--darkBlue)] mb-[45px]"}>
+                        УСЛУГИ
+                    </h2>
                     <div className={"flex flex-col gap-[8px]"}>
                         {pricesList.map((item, index) => (
                             <MnFAQItem

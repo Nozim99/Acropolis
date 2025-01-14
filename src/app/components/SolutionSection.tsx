@@ -25,7 +25,6 @@ export const SolutionSection = () => {
     ]
 
     return (
-        // <section className={"pt-[155px] pb-[123px] overflow-hidden"}>
         <section className={"py-[50px] overflow-hidden sm:py-[70px] lg:pt-[155px] lg:pb-[123px]"}>
             <div className={"mContainer relative"}>
                 <div className={"flex flex-col absolute top-1/2 -translate-y-1/2 gap-y-[4px] -right-[30px]"}>
@@ -35,13 +34,10 @@ export const SolutionSection = () => {
                 </div>
 
                 <Title title={"РЕШЕНИЕ"}/>
-                {/*<ul className={"grid grid-cols-3"}>*/}
                 <ul className={"grid grid-cols-1 gap-y-[20px] sm:grid-cols-3 lg:gap-[15px] xl:gap-0"}>
                     {statisticList.map((item, index) => (
                         <li key={index} className={"flex items-center gap-[10px] flex-col lg:flex-row"}>
-                            {/*<div className={"w-[180px] h-[180px] rounded-full flex justify-center items-center bg-white/10"}>*/}
                             <div
-                                // className={"w-[100px] h-[100px] rounded-full flex justify-center items-center bg-white/10"}>
                                 className={`w-[100px] h-[100px] rounded-full flex justify-center items-center bg-white/10 p-[18px] sm:w-[130px] sm:h-[130px] sm:p-[24px] lg:w-[120px] lg:h-[120px]
                                 xl:w-[180px] xl:h-[180px]`}>
                                 <Image
@@ -59,7 +55,6 @@ export const SolutionSection = () => {
                                     height={item.height}
                                 />
                             </div>
-                            {/*<span className={"font-medium text-2xl"}>{item.title}</span>*/}
                             <span
                                 className={"font-medium text-lg flex-1 sm:text-center lg:text-start lg:text-xl"}>{item.title}</span>
                         </li>

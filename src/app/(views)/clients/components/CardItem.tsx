@@ -3,6 +3,7 @@
 import Image from "next/image";
 import {createPortal} from "react-dom";
 import {useState} from "react";
+import Link from "next/link";
 
 
 interface IProps {
@@ -12,23 +13,26 @@ interface IProps {
     personImage: string;
     fullName: string;
     position: string;
+    url: string;
 }
 
 
-const CardItem = ({image, name, description, personImage, fullName, position}: IProps) => {
+const CardItem = ({image, name, description, personImage, fullName, position, url}: IProps) => {
     const [isOpen, setIsOpen] = useState(false)
 
 
     return (
         <>
             <div className={"mx-auto"}>
-                <div className={"w-[474px] h-[278px] rounded-[10px] bg-[#D9D9D9] overflow-hidden"}>
+                <div
+                    className={"w-[290px] h-[170px] rounded-[10px] bg-[#D9D9D9] overflow-hidden sm:w-[275px] sm:h-[160px] md:w-[320px] md:h-[195px] lg:w-[420px] lg:h-[250px] xl:w-[474px] xl:h-[278px]"}>
                     <Image src={image} alt={name} width={474} height={278}
                            className={"object-center object-cover w-full h-full"}/>
                 </div>
-                <div className={"flex justify-between px-[12px] py-[17px] font-bold text-xl"}>
+                <div
+                    className={"flex justify-between px-[4px] py-[8px] font-bold sm:text-sm md:text-base lg:text-lg lg:px-[10px] xl:px-[12px] lg:py-[13px] xl:py-[17px]"}>
                     <span>{name}</span>
-                    <button onClick={() => setIsOpen(true)}>Описание</button>
+                    <Link target={"_blank"} href={url}>Описание</Link>
                 </div>
             </div>
             {

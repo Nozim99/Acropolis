@@ -84,30 +84,45 @@ export const SectionSolution = () => {
     ];
 
 
-
     return (
-        <section className={"pb-[123px]"}>
-            <div className={"pt-[155px] relative mx-auto container"}>
-                <div className={"flex flex-col absolute top-0 gap-y-[4px] -left-[90px]"}>
+        <section className={""}>
+            <div
+                className={"mContainer pt-[20px] sm:pt-[30px] md:pt-[40px] lg:pt-[60px] xl:pt-[70px] relative pb-[15px] sm:pb-[16px] md:pb-[17px] lg:pb-[18px] xl:pb-[20px]"}>
+                <div className={"flex-col absolute top-0 gap-y-[4px] -left-[90px] hidden lg:flex"}>
                     {Array(20).fill(0).map((_, i) => (
                         <MiniOrnament key={i}/>
                     ))}
                 </div>
 
                 <Title title={"РЕШЕНИЕ"}/>
-                <ul className={"grid grid-cols-3 mb-[30px]"}>
+                <ul className={"grid grid-cols-1 gap-y-[20px] sm:grid-cols-3 lg:gap-[15px] xl:gap-0 mb-[50px]"}>
                     {statisticList.map((item, index) => (
-                        <li key={index} className={"flex items-center gap-[10px] mx-auto"}>
+                        <li key={index} className={"flex items-center gap-[10px] flex-col lg:flex-row"}>
                             <div
-                                className={"w-[180px] h-[180px] rounded-full flex justify-center items-center bg-white/10"}>
-                                <Image src={item.img} alt={item.title} width={item.width} height={item.height}/>
+                                className={`w-[100px] h-[100px] rounded-full flex justify-center items-center bg-white/10 p-[18px] sm:w-[130px] sm:h-[130px] sm:p-[24px] lg:w-[120px] lg:h-[120px]
+                                xl:w-[180px] xl:h-[180px]`}>
+                                <Image
+                                    className={`${
+                                        index === 0
+                                            ? "xl:w-[118px] xl:h-[113px]"
+                                            : index === 1
+                                                ? "xl:w-[123px] xl:h-[115px]"
+                                                : "xl:w-[122px] xl:h-[122px]"
+                                    }                                    
+                                    w-full h-full object-center object-cover`}
+                                    src={item.img}
+                                    alt={item.title}
+                                    width={item.width}
+                                    height={item.height}
+                                />
                             </div>
-                            <span className={"font-medium text-2xl"}>{item.title}</span>
+                            <span
+                                className={"font-medium text-lg flex-1 sm:text-center lg:text-start lg:text-xl xl:text-2xl"}>{item.title}</span>
                         </li>
                     ))}
                 </ul>
 
-                <div className={"grid grid-cols-3 gap-x-[28px] gap-y-[11px]"}>
+                <div className={"grid grid-cols-1 gap-x-[28px] gap-y-[11px] md:grid-cols-2 lg:grid-cols-3"}>
                     {solutionsList.map((item, index) => (
                         <MnFAQItem
                             key={index}

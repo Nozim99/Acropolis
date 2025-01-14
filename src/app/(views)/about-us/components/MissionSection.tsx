@@ -19,12 +19,10 @@ const MissionSection = () => {
                     ))}
                 </div>
 
-                {/*<div className={"grid grid-cols-2 gap-x-[34px]"}>*/}
                 <div className={"lg:grid lg:grid-cols-2 lg:gap-x-[25px] xl:gap-x-[34px]"}>
                     <div className={"lg:hidden"}>
                         <Title title={"МИССИЯ КОМПАНИИ"}/>
                     </div>
-                    {/*<div className="h-[435px] bg-gradient-to-t from-[#FCC612B2] to-transparent flex justify-center">*/}
                     <div
                         className="h-[200px] w-[300px] mx-auto bg-gradient-to-t from-[#FCC612B2] to-transparent flex justify-center sm:w-[320px] sm:h-[210] lg:h-[400px] lg:w-full xl:h-[435px]">
                         <Image src={"/assets/3-people.png"} width={622} height={435} alt={"image"}/>
@@ -33,7 +31,6 @@ const MissionSection = () => {
                         <div className={"hidden lg:block lg:mt-[15px]"}>
                             <Title title={"МИССИЯ КОМПАНИИ"}/>
                         </div>
-                        {/*<p className={"text-2xl font-light"}>*/}
                         <p className={"text-sm mt-[10px] sm:text-base sm:mt-[20px] md:text-lg lg:text-xl xl:text-2xl"}>
                             Наша миссия - способствовать развитию цифровой экосистемы
                             Республики
@@ -47,7 +44,6 @@ const MissionSection = () => {
                         </p>
                     </div>
                 </div>
-                {/*<div className={"mt-[90px] w-1/2"}>*/}
                 <div className={"mt-[40px] lg:w-1/2 lg:mt-[70px]"}>
                     <Title title={"ИСТОРИЯ КОМПАНИИ"}/>
                     <p className={"text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"}>

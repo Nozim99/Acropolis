@@ -35,7 +35,6 @@ const NotAllSection = () => {
     return (
         <section>
             <div className={"mContainer pt-[23px] pb-[20px] text-[#D8A227] sm:pb-[25px] md:pb-[30px] lg:pb-[44px]"}>
-                {/*<h2 className={"title mb-[32px] text-center"}>*/}
                 <h2 className={"title mb-[20px] text-center sm:mb-[23px] md:mb-[28px] lg:mb-[32px]"}>
                     ЭТО ЕЩЕ НЕ ВСЁ
                 </h2>
@@ -49,7 +48,6 @@ const NotAllSection = () => {
                     ускоряем развитие цифровой экосистемы региона, превращая технологические возможности в реальное
                     преимущество
                     для бизнеса.</p>
-                {/*<ul className={"grid grid-cols-2 gap-[24px] font-medium text-4xl text-white"}>*/}
                 <ul className={"grid grid-cols-1 gap-y-[24px] font-medium text-lg text-white sm:grid-cols-2 md:text-2xl lg:gap-y-[32px] lg:text-3xl xl:text-4xl"}>
                     {cardList.map((item, index) => (
                         <li className={`
@@ -57,7 +55,6 @@ const NotAllSection = () => {
                     ${index === 2 ? "order-1" : ""}
                     ${(index === 0 || index === 3) ? "place-self-end" : ""}
                     card border relative p-[16px] w-[270px] h-[140px] flex items-end overflow-hidden mx-auto md:w-[336px] md:h-[190px] lg:w-[450px] lg:h-[225px] xl:w-[590px] xl:h-[267px]`}
-                            // card border relative p-[16px] w-[590px] h-[267px] flex items-end overflow-hidden`}
                             key={item.title}>
                             {index === 2
                                 ? <div
