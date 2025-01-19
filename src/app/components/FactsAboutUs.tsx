@@ -1,5 +1,8 @@
+'use client'
+
 import Title from "@/components/Title";
 import Image from "next/image";
+import {motion} from "framer-motion";
 
 const FactsAboutUs = () => {
     const cardsList = [
@@ -50,7 +53,11 @@ const FactsAboutUs = () => {
                     className={"mt-[45px] grid grid-cols-2 gap-[15px] w-[300px] mx-auto sm:gap-[25px] sm:w-[327px] md:w-[430px] lg:w-auto lg:grid-cols-4"}>
                     {
                         cardsList.map((card, index) => (
-                            <div
+                            <motion.div
+                                initial={{opacity: 0, top: 100, scale: 0.7}}
+                                whileInView={{opacity: 1, top: 0, scale: 1}}
+                                viewport={{once: true}}
+                                transition={{ease: "easeOut", duration: 0.8}}
                                 key={card.image.url}
                                 className={`relative bg-[var(--orange)] w-[130px] h-[130px] rounded-[15px] py-[6px] px-[2px] flex flex-col justify-end mx-auto sm:w-[150px] sm:h-[150px] sm:py-[10px]
                                 md:w-[200px] md:h-[200px] md:px-[6px] xl:w-[269px] xl:h-[270px] xl:p-[20px]`}
@@ -82,7 +89,7 @@ const FactsAboutUs = () => {
                                 >
                                     {card.title}
                                 </h5>
-                            </div>
+                            </motion.div>
                         ))
                     }
                 </div>

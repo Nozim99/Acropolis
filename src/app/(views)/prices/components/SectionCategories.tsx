@@ -1,3 +1,6 @@
+'use client'
+
+import {motion} from 'framer-motion';
 import Image from "next/image";
 import MnFAQItem from "./MnFAQItem"
 import {MiniOrnament} from "@/components/Icons";
@@ -37,7 +40,13 @@ const SectionCategories = () => {
                 </div>
 
 
-                <div className={"hidden lg:flex justify-end flex-1 items-end"}>
+                <motion.div
+                    className={"hidden lg:flex justify-end flex-1 items-end"}
+                    initial={{opacity: 0, scale: 0.8}}
+                    whileInView={{opacity: 1, scale: 1}}
+                    viewport={{once: true}}
+                    transition={{duration: 0.7}}
+                >
                     <Image
                         className={"bg-[var(--darkBlue)] rounded-full mr-[120px]"}
                         src={"/assets/prices-categories.png"}
@@ -45,12 +54,18 @@ const SectionCategories = () => {
                         width={455}
                         height={455}
                     />
-                </div>
+                </motion.div>
 
                 <div className={"flex-1"}>
-                    <h2 className={"title text-center lg:text-start lg:text-[var(--darkBlue)] mb-[45px]"}>
+                    <motion.h2
+                        className={"title text-center lg:text-start lg:text-[var(--darkBlue)] mb-[45px]"}
+                        initial={{opacity: 0, scale: 0.7}}
+                        whileInView={{opacity: 1, scale: 1}}
+                        viewport={{once: true}}
+                        transition={{duration: 0.7}}
+                    >
                         УСЛУГИ
-                    </h2>
+                    </motion.h2>
                     <div className={"flex flex-col gap-[8px]"}>
                         {pricesList.map((item, index) => (
                             <MnFAQItem
@@ -60,6 +75,7 @@ const SectionCategories = () => {
                                 title={item.title}
                                 description={item.description}
                                 zIndex={11 + pricesList.length - index}
+                                index={index}
                             />
                         ))}
                     </div>

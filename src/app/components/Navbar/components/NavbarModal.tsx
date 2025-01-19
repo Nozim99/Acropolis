@@ -1,5 +1,6 @@
 'use client'
 
+import {motion} from 'framer-motion';
 import {createPortal} from "react-dom";
 import {CloseIcon, MenuIcon} from "@/components/Icons";
 import {navList} from "@/app/utils/navList";
@@ -13,9 +14,15 @@ const NavbarModal = () => {
 
     return (
         <>
-            <button onClick={() => setIsOpen(true)}>
+            <motion.button
+                onClick={() => setIsOpen(true)}
+                initial={{opacity: 0, scale: 0.7}}
+                whileInView={{opacity: 1, scale: 1}}
+                viewport={{once: true}}
+                transition={{ease: "easeOut", duration: 0.6, delay: 0.8}}
+            >
                 <MenuIcon/>
-            </button>
+            </motion.button>
 
             {
                 isOpen &&
@@ -29,9 +36,21 @@ const NavbarModal = () => {
                             </button>
 
                             {
-                                navList.map((item) => (
-                                    <Link onClick={() => setIsOpen(false)} href={item.path}
-                                          key={item.path}>{item.label}</Link>
+                                navList.map((item, index) => (
+                                    <motion.div
+                                        className={"relative"}
+                                        key={item.path}
+                                        initial={{opacity: 0, scale: 0.7, left: 50}}
+                                        whileInView={{opacity: 1, scale: 1, left: 0}}
+                                        viewport={{once: true}}
+                                        transition={{ease: "easeOut", duration: 0.6, delay: 0.2 + index / 5}}
+                                    >
+                                        <Link
+                                            onClick={() => setIsOpen(false)}
+                                            href={item.path}
+                                            key={item.path}>{item.label}
+                                        </Link>
+                                    </motion.div>
                                 ))
                             }
                         </div>

@@ -1,11 +1,19 @@
 import axios from "axios";
 import {generateMessage} from "./generateMsg";
 
+
+interface MessageData {
+    name?: string,
+    email?: string,
+    company?: string
+}
+
+
 const base_url = 'https://api.telegram.org';
 const bot_key = "7872515241:AAFz3fAH1uoZ1ZmTR6lATwVKWCBYWV9uHc0";
 const channel_id = "-1002337571256";
 
-export const sendMessage = (data: any) => {
+export const sendMessage = (data: MessageData) => {
 
     const url = `${base_url}/bot${bot_key}/sendMessage`;
 

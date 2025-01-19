@@ -1,5 +1,6 @@
 'use client'
 
+import {motion} from 'framer-motion';
 import {RuIcon, UKIcon, UzIcon} from "@/components/Icons";
 import {useState} from "react";
 import {createPortal} from "react-dom";
@@ -24,9 +25,15 @@ const LanguageSelector = () => {
     return (
         <>
             <div className={"relative"}>
-                <button onClick={() => setIsOpen(true)} className={"flex items-center gap-x-[8px]"}>
+                <motion.button
+                    onClick={() => setIsOpen(true)} className={"flex items-center gap-x-[8px]"}
+                    initial={{opacity: 0, scale: 0.7}}
+                    whileInView={{opacity: 1, scale: 1}}
+                    viewport={{once: true}}
+                    transition={{ease: "easeOut", duration: 0.6, delay: 2}}
+                >
                     <span>{selectedLanguage}</span> {languages.find(item => item.title === selectedLanguage)?.icon}
-                </button>
+                </motion.button>
 
                 <ul
                     className={`${isOpen ? "" : "hidden"} absolute bg-white z-20 right-0 top-[35px] shadow-2xl border`}>{languages.map(item => (

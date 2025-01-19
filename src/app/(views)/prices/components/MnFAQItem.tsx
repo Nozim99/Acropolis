@@ -1,5 +1,6 @@
 'use client'
 
+import {motion} from "framer-motion"
 import {useEffect, useRef, useState} from "react";
 import {Anonymous_Pro} from "next/font/google";
 
@@ -10,6 +11,7 @@ interface IProps {
     title: string,
     description: string,
     zIndex: number,
+    index: number,
 }
 
 const anonymousPro = Anonymous_Pro({
@@ -18,7 +20,7 @@ const anonymousPro = Anonymous_Pro({
 })
 
 
-const MnFAQItem = ({isDark, itemNumber, title, description, zIndex}: IProps) => {
+const MnFAQItem = ({isDark, itemNumber, title, description, zIndex, index}: IProps) => {
     const [isOpen, setIsOpen] = useState(false)
     const itemRef = useRef<HTMLDivElement>(null)
 
@@ -35,10 +37,15 @@ const MnFAQItem = ({isDark, itemNumber, title, description, zIndex}: IProps) => 
 
     return (
         <div className="relative">
-            <button
+            <motion.button
                 onClick={() => setIsOpen(true)}
                 className={`${isOpen ? "rounded-t-[10px]" : "rounded-[10px]"} ${isDark ? "bg-[var(--darkBlue)] border-[#D8A227]" : "bg-[#D8A227] border-[var(--darkBlue)]"} border-[2px] md:border-[3px] transition-all text-start
-                font-medium text-2xl px-[13px] py-[4px] w-full h-full min-h-[85px] flex items-center gap-x-[10px] sm:min-h-[90px] md:gap-x-[20px] lg:min-h-[111px]`}>
+                font-medium text-2xl px-[13px] py-[4px] w-full h-full min-h-[85px] flex items-center gap-x-[10px] sm:min-h-[90px] md:gap-x-[20px] lg:min-h-[111px] relative`}
+                initial={{opacity: 0, scale: 0.7, left: 30}}
+                whileInView={{opacity: 1, scale: 1, left: 0}}
+                viewport={{once: true}}
+                transition={{duration: 0.7, ease: "linear", delay: 0.1 + index / 5}}
+            >
                 <span
                     className={`${anonymousPro.className} ${isDark ? "text-[#D8A227]" : "text-[var(--darkBlue)]"} font-bold text-4xl sm:text-5xl lg:text-6xl`}>
                     {itemNumber}
@@ -46,7 +53,7 @@ const MnFAQItem = ({isDark, itemNumber, title, description, zIndex}: IProps) => 
                 <span className={"text-lg font-medium sm:text-2xl"}>
                     {title}
                 </span>
-            </button>
+            </motion.button>
             <div className={`${isOpen ? "block" : "hidden"} absolute inset-0 cursor-pointer`}></div>
             <div
                 style={{zIndex}}

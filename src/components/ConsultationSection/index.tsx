@@ -1,3 +1,6 @@
+'use client'
+
+import {motion} from 'framer-motion';
 import Title from "@/components/Title";
 import {ChartIcon, PersonIcon, SuccessSettingIcon} from "@/components/Icons";
 import FormButton from "./FormButton"
@@ -30,29 +33,64 @@ const Index = () => {
                     className={"grid grid-cols-1 gap-[20px] lg:grid-cols-2"}
                 >
                     <div>
-                        <h4
+                        <motion.h4
                             className={"font-bold text-xl text-[var(--orange)] mb-[12px] sm:text-2xl sm:mb-[14px] md:mb-[18px] md:text-center lg:text-start lg:text-2xl xl:text-3xl"}
+                            initial={{opacity: 0, top: 100, scale: 0.7}}
+                            whileInView={{opacity: 1, top: 0, scale: 1}}
+                            viewport={{once: true}}
+                            transition={{ease: "easeOut", duration: 0.8}}
                         >
                             Что вы получите:
-                        </h4>
+                        </motion.h4>
                         <ul
                             className={"font-medium text-sm grid gap-[8px] sm:text-lg md:w-[600px] md:mx-auto lg:w-full lg:text-lg lg:font-semibold xl:font-bold"}
                         >
                             {ourTargetsList.map((item, index) => (
-                                <li
+                                <motion.li
                                     key={index}
-                                    className={"flex items-center gap-x-[22px]"}
+                                    className={"flex items-center gap-x-[22px] relative"}
+                                    initial={{opacity: 0, top: 20, scale: 0.7}}
+                                    whileInView={{opacity: 1, top: 0, scale: 1}}
+                                    viewport={{once: true}}
+                                    transition={{ease: "easeOut", duration: 0.8}}
                                 >
                                     {item.icon}
                                     <span className={"flex-1"}>{item.title}</span>
-                                </li>
+                                </motion.li>
                             ))}</ul>
                     </div>
                     {/* FORM */}
                     <form className={"flex flex-col gap-[5px] text-lg font-semibold md:text-xl lg:text-2xl"}>
-                        <input placeholder={"Имя "} className={"input"} type="text" id={"name"}/>
-                        <input placeholder={"E-mail"} className={"input"} type="text" id={"email"}/>
-                        <input placeholder={"Название компании "} className={"input"} type="text" id={"company"}/>
+                        <motion.input
+                            placeholder={"Имя "}
+                            className={"input relative"}
+                            type="text"
+                            id={"name"}
+                            initial={{opacity: 0, left: 50, scale: 0.7}}
+                            whileInView={{opacity: 1, left: 0, scale: 1}}
+                            viewport={{once: true}}
+                            transition={{ease: "easeOut", duration: 0.8}}
+                        />
+                        <motion.input
+                            placeholder={"E-mail"}
+                            className={"input relative"}
+                            type="text"
+                            id={"email"}
+                            initial={{opacity: 0, left: 50, scale: 0.7}}
+                            whileInView={{opacity: 1, left: 0, scale: 1}}
+                            viewport={{once: true}}
+                            transition={{ease: "easeOut", duration: 0.8}}
+                        />
+                        <motion.input
+                            placeholder={"Название компании "}
+                            className={"input relative"}
+                            type="text"
+                            id={"company"}
+                            initial={{opacity: 0, left: 50, scale: 0.7}}
+                            whileInView={{opacity: 1, left: 0, scale: 1}}
+                            viewport={{once: true}}
+                            transition={{ease: "easeOut", duration: 0.8}}
+                        />
                         <FormButton/>
                     </form>
                 </div>

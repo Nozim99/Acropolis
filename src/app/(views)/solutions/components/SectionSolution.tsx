@@ -1,3 +1,6 @@
+'use client'
+
+import {motion} from "framer-motion";
 import Title from "@/components/Title";
 import Image from "next/image";
 import MnFAQItem from "./MnFAQItem";
@@ -97,7 +100,14 @@ export const SectionSolution = () => {
                 <Title title={"РЕШЕНИЕ"}/>
                 <ul className={"grid grid-cols-1 gap-y-[20px] sm:grid-cols-3 lg:gap-[15px] xl:gap-0 mb-[50px]"}>
                     {statisticList.map((item, index) => (
-                        <li key={index} className={"flex items-center gap-[10px] flex-col lg:flex-row"}>
+                        <motion.li
+                            key={index}
+                            className={"flex items-center gap-[10px] flex-col lg:flex-row"}
+                            initial={{opacity: 0, scale: 0.7}}
+                            whileInView={{opacity: 1, scale: 1}}
+                            viewport={{once: true}}
+                            transition={{duration: 0.7}}
+                        >
                             <div
                                 className={`w-[100px] h-[100px] rounded-full flex justify-center items-center bg-white/10 p-[18px] sm:w-[130px] sm:h-[130px] sm:p-[24px] lg:w-[120px] lg:h-[120px]
                                 xl:w-[180px] xl:h-[180px]`}>
@@ -118,7 +128,7 @@ export const SectionSolution = () => {
                             </div>
                             <span
                                 className={"font-medium text-lg flex-1 sm:text-center lg:text-start lg:text-xl xl:text-2xl"}>{item.title}</span>
-                        </li>
+                        </motion.li>
                     ))}
                 </ul>
 
@@ -126,7 +136,8 @@ export const SectionSolution = () => {
                     {solutionsList.map((item, index) => (
                         <MnFAQItem
                             key={index}
-                            index={11 + statisticList.length - index}
+                            index={index}
+                            zIndex={11 + statisticList.length - index}
                             {...item}
                             description={item.description}
                         />

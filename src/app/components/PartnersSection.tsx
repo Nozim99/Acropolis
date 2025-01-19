@@ -1,3 +1,6 @@
+'use client'
+
+import {motion} from 'framer-motion';
 import {MiniOrnament} from "@/components/Icons";
 
 const PartnersSection = () => {
@@ -14,28 +17,40 @@ const PartnersSection = () => {
                     ))}
                 </div>
 
-                <h2
-                    className={"text-center font-bold text-2xl mb-[18px] sm:text-3xl md:text-4xl mg:text-5xl"}
+                <motion.h2
+                    initial={{opacity: 0, top: 20, scale: 0.7}}
+                    whileInView={{opacity: 1, top: 0, scale: 1}}
+                    viewport={{once: true}}
+                    transition={{ease: "easeOut", duration: 0.8}}
+                    className={"text-center font-bold text-2xl mb-[18px] sm:text-3xl md:text-4xl mg:text-5xl relative"}
                 >
                     ПАРТНЕРЫ
-                </h2>
-                <p
-                    className={"font-light sm:text-lg md:text-xl lg:text-2xl text-center"}
+                </motion.h2>
+                <motion.p
+                    initial={{opacity: 0, top: 40, scale: 0.7}}
+                    whileInView={{opacity: 1, top: 0, scale: 1}}
+                    viewport={{once: true}}
+                    transition={{ease: "easeOut", duration: 0.8}}
+                    className={"font-light sm:text-lg md:text-xl lg:text-2xl text-center relative"}
                 >
                     Мы сотрудничаем с ведущими мировыми производителями
                     оборудования
                     и ПО, что позволяет нам предлагать только проверенные решения:
-                </p>
+                </motion.p>
                 <ul
                     className={"grid grid-cols-2 mt-[20px] gap-[20px] sm:grid-cols-3 md:grid-cols-4 lg:w-[870px] lg:mx-auto xl:w-[900px] md:mt-[30px] lg:mt-[46px]"}
                 >
                     {partnersList.map((item, index) => (
-                        <li
+                        <motion.li
                             key={index}
-                            className={"h-[120px] bg-white lg:w-[198px] lg:mx-auto xl:h-[140px]"}
+                            className={"h-[120px] bg-white lg:w-[198px] lg:mx-auto xl:h-[140px] relative"}
+                            initial={{opacity: 0, top: 40, scale: 0.7}}
+                            whileInView={{opacity: 1, top: 0, scale: 1}}
+                            viewport={{once: true}}
+                            transition={{ease: "easeOut", duration: 0.8}}
                         >
 
-                        </li>
+                        </motion.li>
                     ))}</ul>
             </div>
         </section>
