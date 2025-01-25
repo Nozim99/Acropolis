@@ -28,20 +28,11 @@ const Index = () => {
             >
 
 
-                <Title title={"Запишитесь на консультацию"}/>
+                <Title title={"Обратная связь"}/>
                 <div
                     className={"grid grid-cols-1 gap-[20px] lg:grid-cols-2"}
                 >
                     <div>
-                        <motion.h4
-                            className={"font-bold text-xl text-[var(--orange)] mb-[12px] sm:text-2xl sm:mb-[14px] md:mb-[18px] md:text-center lg:text-start lg:text-2xl xl:text-3xl"}
-                            initial={{opacity: 0, top: 100, scale: 0.7}}
-                            whileInView={{opacity: 1, top: 0, scale: 1}}
-                            viewport={{once: true}}
-                            transition={{ease: "easeOut", duration: 0.8}}
-                        >
-                            Что вы получите:
-                        </motion.h4>
                         <ul
                             className={"font-medium text-sm grid gap-[8px] sm:text-lg md:w-[600px] md:mx-auto lg:w-full lg:text-lg lg:font-semibold xl:font-bold"}
                         >

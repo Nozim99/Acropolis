@@ -58,7 +58,7 @@ const SectionCategories = () => {
 
                 <div className={"flex-1"}>
                     <motion.h2
-                        className={"title text-center lg:text-start lg:text-[var(--darkBlue)] mb-[45px]"}
+                        className={"hidden lg:block title text-center lg:text-start lg:text-[var(--darkBlue)] mb-[45px]"}
                         initial={{opacity: 0, scale: 0.7}}
                         whileInView={{opacity: 1, scale: 1}}
                         viewport={{once: true}}

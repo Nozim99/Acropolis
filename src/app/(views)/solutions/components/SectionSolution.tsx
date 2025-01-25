@@ -97,7 +97,7 @@ export const SectionSolution = () => {
                     ))}
                 </div>
 
-                <Title title={"РЕШЕНИЕ"}/>
+                <Title className={"hidden lg:block"} title={"РЕШЕНИЯ"}/>
                 <ul className={"grid grid-cols-1 gap-y-[20px] sm:grid-cols-3 lg:gap-[15px] xl:gap-0 mb-[50px]"}>
                     {statisticList.map((item, index) => (
                         <motion.li

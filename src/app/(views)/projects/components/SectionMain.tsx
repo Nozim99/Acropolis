@@ -26,7 +26,7 @@ const SectionMain = () => {
                     viewport={{once: true}}
                     transition={{duration: 0.7}}
                 >
-                    Наши клиенты
+                    Наши Проекты
                 </motion.h1>
                 <div className={"mt-[30px] min-[320px]:w-[300px] mx-auto sm:w-[340px] md:w-[420px] lg:w-5/12 lg:mx-0"}>
                     <motion.div

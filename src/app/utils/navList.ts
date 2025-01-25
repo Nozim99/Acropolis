@@ -16,8 +16,8 @@ export const navList = [
         label: "Решения"
     },
     {
-        path: "/clients",
-        label: "Клиенты"
+        path: "/projects",
+        label: "Проекты"
     },
     {
         path: "/contact",

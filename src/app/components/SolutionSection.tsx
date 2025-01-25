@@ -36,7 +36,7 @@ export const SolutionSection = () => {
                     ))}
                 </div>
 
-                <Title title={"РЕШЕНИЕ"}/>
+                <Title title={"РЕШЕНИЯ"}/>
                 <ul className={"grid grid-cols-1 gap-y-[20px] sm:grid-cols-3 lg:gap-[15px] xl:gap-0"}>
                     {statisticList.map((item, index) => (
                         <motion.li
