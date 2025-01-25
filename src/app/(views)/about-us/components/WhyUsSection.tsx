@@ -10,36 +10,11 @@ const WhyUsSection = () => {
             <div
                 className={"mContainer pt-[25px] pb-[30px] relative sm:pt-[30px] md:pt-[40px] lg:pt-[50px] xl:pt-[60px] sm:pb-[50px] md:pb-[70px] lg:pb-[100px] xl:pb-[110px]"}>
 
-                <Title title={"ПОЧЕМУ МЫ?"} className={"text-[var(--darkBlue)]"}/>
-                <div
-                    className={"text-sm sm:text-base md:text-lg lg:font-light lg:text-xl xl:text-2xl text-[#004040] mb-[40px]"}>
-                    <motion.p
-                        className={"mb-[20px] lg:mb-[25px]"}
-                        initial={{opacity: 0, scale: 0.7}}
-                        whileInView={{opacity: 1, scale: 1}}
-                        viewport={{once: true}}
-                        transition={{duration: 0.7}}
-                    >
-                        За эти годы мы накопили глубокую экспертизу в разнообразных областях IT, что позволяет нам понимать потребности бизнеса и предлагать инновационные подходы.
-                    </motion.p>
-                    <motion.p
-                        className={"mb-[20px]"}
-                        initial={{opacity: 0, scale: 0.7}}
-                        whileInView={{opacity: 1, scale: 1}}
-                        viewport={{once: true}}
-                        transition={{duration: 0.7}}
-                    >
-                        Мы понимаем бизнес наших заказчиков, умеем адаптироваться к его особенностям и всегда нацелены на долгосрочный успех.
-                    </motion.p>
-                    <motion.p
-                        initial={{opacity: 0, scale: 0.7}}
-                        whileInView={{opacity: 1, scale: 1}}
-                        viewport={{once: true}}
-                        transition={{duration: 0.7}}
-                    >
-                        Каждая задача для нас — это возможность превзойти ожидания и внести реальный вклад в развитие вашего бизнеса.
-                    </motion.p>
-                </div>
+                <Title
+                    title={"ПОЧЕМУ МЫ?"}
+                    className={"text-[var(--darkBlue)]"}
+                    mb={"mb-[30px] md:mb-[50px] xl:mb-[60px] 2xl:mb-[70px]"}
+                />
                 <div
                     className={"flex flex-col items-center gap-y-[40px] md:flex-row md:justify-center md:gap-x-[40px] md:items-start lg:gap-x-[120px] xl:gap-x-[200px]"}>
                     <div className={"w-[270px] text-center"}>

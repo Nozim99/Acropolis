@@ -20,7 +20,7 @@ export default function Home() {
                 <PartnersSection/>
                 <ConsultationSection/>
             </div>
-            <FAQSection />
+            {/*<FAQSection />*/}
         </div>
     );
 }
