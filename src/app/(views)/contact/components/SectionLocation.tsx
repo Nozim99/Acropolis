@@ -2,8 +2,11 @@
 
 import {motion} from 'framer-motion';
 import {LocationIcon, MiniOrnament, PhoneIcon} from "@/components/Icons";
+import {useTranslation} from "react-i18next";
 
 const SectionLocation = () => {
+    const {t} = useTranslation();
+
     return (
         <section className={"bg-[var(--darkBlue) text-[#D8A227]"}>
             <div
@@ -39,7 +42,7 @@ const SectionLocation = () => {
                         viewport={{once: true}}
                         transition={{duration: 0.7, ease: "easeOut"}}
                     >
-                        Мы находимся по адресу:
+                        {t("our_address")}
                     </motion.h4>
                     <div
                         className={"flex items-center font-bold text-sm gap-x-[8px] sm:text-base md:text-lg mb-[30px] lg:mb-[60px] xl:gap-x-[20px] xl:mb-[70px] xl:text-2xl"}>
@@ -60,7 +63,7 @@ const SectionLocation = () => {
                             viewport={{once: true}}
                             transition={{duration: 0.7, ease: "easeOut", delay: 0.7}}
                         >
-                            Республика Узбекистан, г. Ташкент 1-й Проезд Дархан, д. 7, БЦ {'"'}TUT{'"'}
+                            {t("current_address")}
                         </motion.span>
                     </div>
                     <motion.h4
@@ -70,7 +73,7 @@ const SectionLocation = () => {
                         viewport={{once: true}}
                         transition={{duration: 0.7, ease: "easeOut"}}
                     >
-                        Номер телефона
+                        {t("phone_number")}
                     </motion.h4>
                     <div
                         className={"flex items-center font-bold text-sm gap-x-[10px] sm:text-base md:text-lg xl:gap-x-[20px] xl:text-2xl"}>

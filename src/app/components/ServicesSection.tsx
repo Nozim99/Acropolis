@@ -2,24 +2,28 @@
 
 import {motion} from "framer-motion";
 import Image from "next/image";
+import {useTranslation} from "react-i18next";
 
 const ServicesSection = () => {
+    const {t} = useTranslation();
+
+
     const cardList = [
         {
             url: "",
-            title: "Консалтинг, аудит ИБ/ИТ (обследование)",
+            title: t("service_1"),
         },
         {
             url: "",
-            title: "Проектирование",
+            title: t("service_2"),
         },
         {
             url: "",
-            title: "Пусконаладка",
+            title: t("service_3"),
         },
         {
             url: "",
-            title: "Сервисная поддержка",
+            title: t("service_4"),
         },
     ]
 
@@ -27,7 +31,9 @@ const ServicesSection = () => {
         <section className={"pb-[27px] bg-white"}>
             <div className={"container mx-auto relative pt-[30px] sm:pt-[40px] md:pt-[50px] lg:pt-[78px]"}>
 
-                <h2 className={"text-center font-bold lg:text-5xl mb-[35px] text-[var(--darkBlue)] text-3xl sm:text-4xl md:text-5xl"}>УСЛУГИ</h2>
+                <h2 className={"text-center font-bold lg:text-5xl mb-[35px] text-[var(--darkBlue)] text-3xl sm:text-4xl md:text-5xl"}>
+                    {t("prices")?.toUpperCase()}
+                </h2>
                 <ul
                     className={"grid grid-cols-1 gap-y-[30px] sm:grid-cols-2 sm:w-[540px] sm:mx-auto lg:w-full lg:grid-cols-4 xl:flex xl:justify-center xl:gap-x-[50px]"}
                 >
@@ -55,7 +61,7 @@ const ServicesSection = () => {
                     transition={{ease: "easeOut", duration: 0.8}}
                     className={"bg-[var(--orange)] rounded-[24px] mx-auto px-[30px] py-[10px] font-bold text-lg block mt-[23px] hover:bg-yellow-500 transition-all sm:px-[37px] lg:text-xl lg:py-[16px]"}
                 >
-                    Узнать Подробнее
+                    {t("find_out_more")}
                 </motion.button>
             </div>
         </section>

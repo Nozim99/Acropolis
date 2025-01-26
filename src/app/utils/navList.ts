@@ -1,26 +1,26 @@
 export const navList = [
     {
         path: "/",
-        label: "Главная"
+        label: "home"
     },
     {
         path: "/about-us",
-        label: "О Нас"
+        label: "about_us"
     },
     {
         path: "/prices",
-        label: "Услуги"
+        label: "prices"
     },
     {
         path: "/solutions",
-        label: "Решения"
+        label: "solutions"
     },
     {
         path: "/projects",
-        label: "Проекты"
+        label: "projects"
     },
     {
         path: "/contact",
-        label: "Контакты"
+        label: "contact"
     },
 ]

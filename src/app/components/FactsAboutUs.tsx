@@ -3,8 +3,11 @@
 import Title from "@/components/Title";
 import Image from "next/image";
 import {motion} from "framer-motion";
+import {useTranslation} from "react-i18next";
 
 const FactsAboutUs = () => {
+    const {t} = useTranslation();
+
     const cardsList = [
         {
             image: {
@@ -13,7 +16,7 @@ const FactsAboutUs = () => {
                 height: 110,
             },
             value: "5+",
-            title: "стран реализации проектов",
+            title: t("projects_in_process"),
         },
         {
             image: {
@@ -22,7 +25,7 @@ const FactsAboutUs = () => {
                 height: 103,
             },
             value: "30+",
-            title: "довольных заказчиков",
+            title: t("satisfied_customers"),
         },
         {
             image: {
@@ -31,7 +34,7 @@ const FactsAboutUs = () => {
                 height: 110,
             },
             value: "10+",
-            title: "лет опыта команды",
+            title: t("experience"),
         },
         {
             image: {
@@ -40,7 +43,7 @@ const FactsAboutUs = () => {
                 height: 93,
             },
             value: "12+",
-            title: "партнеров",
+            title: t("partners"),
         },
     ]
 
@@ -48,7 +51,7 @@ const FactsAboutUs = () => {
         <section className={"bg-white pt-[30px] pb-[42px] sm:pt-[40px] md:pt-[40px] lg:pt-[72px]"}>
             <div className={"mContainer relative"}>
 
-                <Title title={"ФАКТЫ О НАС"} className={"text-[var(--darkBlue)]"}/>
+                <Title title={t("facts_about_us")} className={"text-[var(--darkBlue)]"}/>
                 <div
                     className={"mt-[45px] grid grid-cols-2 gap-[15px] w-[300px] mx-auto sm:gap-[25px] sm:w-[327px] md:w-[430px] lg:w-auto lg:grid-cols-4"}>
                     {

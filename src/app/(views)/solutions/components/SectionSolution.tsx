@@ -5,24 +5,27 @@ import Title from "@/components/Title";
 import Image from "next/image";
 import MnFAQItem from "./MnFAQItem";
 import {MiniOrnament} from "@/components/Icons";
+import {useTranslation} from "react-i18next";
 
 export const SectionSolution = () => {
+    const {t} = useTranslation();
+
     const statisticList = [
         {
             img: "/assets/laptops-setting.png",
-            title: "ИТ-инфраструктура",
+            title: t("solution_1"),
             width: 118,
             height: 113,
         },
         {
             img: "/assets/pc-setting.png",
-            title: "Системное ПО",
+            title: t("solution_2"),
             width: 123,
             height: 115,
         },
         {
             img: "/assets/world-security.png",
-            title: "Информационная безопасность",
+            title: t("solution_3"),
             width: 122,
             height: 122,
         },
@@ -30,58 +33,58 @@ export const SectionSolution = () => {
 
     const solutionsList = [
         {
-            title: "Серверная инфраструктура и операционые системы",
-            description: "Мы предоставляем услуги по проектированию, настройке и обслуживанию серверной инфраструктуры и операционных систем, чтобы обеспечить стабильность и высокую производительность IT-среды вашего бизнеса.",
+            title: t("solution_title_1"),
+            description: t("solution_description_1"),
             isYellow: true,
         },
         {
-            title: "Система управления базами данных",
-            description: "Разрабатываем и внедряем системы управления базами данных, которые позволяют безопасно хранить, эффективно обрабатывать и анализировать большие объемы информации, удовлетворяя потребности вашего бизнеса.",
+            title: t("solution_title_2"),
+            description: t("solution_description_2"),
             isYellow: true,
         },
         {
-            title: "Сетевая безопасность",
-            description: "Обеспечиваем защиту ваших сетей от киберугроз с помощью современных технологий, включая системы обнаружения атак, межсетевые экраны и защиту конфиденциальных данных.",
+            title: t("solution_title_3"),
+            description: t("solution_description_3"),
             isYellow: true,
         },
         {
-            title: "Системы хранения данных",
-            description: "Предлагаем решения для создания масштабируемых и надежных систем хранения данных, которые обеспечивают быстрый доступ и защиту информации, важной для вашей компании.",
+            title: t("solution_title_4"),
+            description: t("solution_description_4"),
             isYellow: false,
         },
         {
-            title: "Операционные системы",
-            description: "Осуществляем установку, настройку и поддержку различных операционных систем, чтобы повысить надежность и производительность вашей IT-инфраструктуры.",
+            title: t("solution_title_5"),
+            description: t("solution_description_5"),
             isYellow: false,
         },
         {
-            title: "Безопасность пользователей",
-            description: "Обеспечиваем комплексные меры для защиты пользователей и их данных, включая контроль доступа, защиту учетных записей и предотвращение несанкционированного использования.",
+            title: t("solution_title_6"),
+            description: t("solution_description_6"),
             isYellow: false,
         },
         {
-            title: "Виртуализация / Гиперконвергенция",
-            description: "Внедряем решения по виртуализации и гиперконвергенции, которые помогают оптимизировать использование ресурсов и повысить гибкость управления IT-инфраструктурой.",
+            title: t("solution_title_7"),
+            description: t("solution_description_7"),
             isYellow: true,
         },
         {
-            title: "ПО RK/DR",
-            description: "Предоставляем программное обеспечение для резервного копирования и восстановления данных, чтобы минимизировать риски потери информации и обеспечить их доступность при сбоях.",
+            title: t("solution_title_8"),
+            description: t("solution_description_8"),
             isYellow: true,
         },
         {
-            title: "SOC компоненты",
-            description: "Предлагаем решения для создания и управления Центрами безопасности (SOC), обеспечивающие мониторинг, анализ и нейтрализацию киберугроз в режиме реального времени.",
+            title: t("solution_title_9"),
+            description: t("solution_description_9"),
             isYellow: true,
         },
         {
-            title: "Система резервного копирования",
-            description: "Разрабатываем и внедряем системы резервного копирования, которые гарантируют сохранность данных, их восстановление после сбоев и соответствие требованиям безопасности.",
+            title: t("solution_title_10"),
+            description: t("solution_description_10"),
             isYellow: false,
         },
         {
-            title: "Сети передачи данных",
-            description: "Проектируем и обслуживаем сети передачи данных с высокой пропускной способностью и надежностью, обеспечивая бесперебойное взаимодействие между различными системами и устройствами.",
+            title: t("solution_title_11"),
+            description: t("solution_description_11"),
             isYellow: false,
         },
     ];
@@ -97,7 +100,10 @@ export const SectionSolution = () => {
                     ))}
                 </div>
 
-                <Title className={"hidden lg:block"} title={"РЕШЕНИЯ"}/>
+                <Title
+                    className={"hidden lg:block"}
+                    title={t("solution")}
+                />
                 <ul className={"grid grid-cols-1 gap-y-[20px] sm:grid-cols-3 lg:gap-[15px] xl:gap-0 mb-[50px]"}>
                     {statisticList.map((item, index) => (
                         <motion.li

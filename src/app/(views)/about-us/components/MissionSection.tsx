@@ -4,8 +4,11 @@ import {motion} from 'framer-motion';
 import Image from "next/image"
 import Title from "@/components/Title";
 import {MiniOrnament} from "@/components/Icons";
+import {useTranslation} from "react-i18next";
 
 const MissionSection = () => {
+    const {t} = useTranslation()
+
     return (
         <section className={"overflow-hidden"}>
             <div className="mContainer pt-[57px] pb-[30px] relative md:mb-[40px] lg:mb-[80px] xl:mb-[99px]">
@@ -32,7 +35,7 @@ const MissionSection = () => {
 
                 <div className={"lg:grid lg:grid-cols-2 lg:gap-x-[25px] xl:gap-x-[34px]"}>
                     <div className={"lg:hidden"}>
-                        <Title title={"МИССИЯ КОМПАНИИ"}/>
+                        <Title title={t("company_mission")}/>
                     </div>
                     <motion.div
                         className="h-[200px] w-[300px] mx-auto bg-gradient-to-t from-[#FCC612B2] to-transparent flex justify-center sm:w-[320px] sm:h-[210] lg:h-[400px] lg:w-full xl:h-[435px]"
@@ -45,7 +48,7 @@ const MissionSection = () => {
                     </motion.div>
                     <div>
                         <div className={"hidden lg:block lg:mt-[15px]"}>
-                            <Title title={"МИССИЯ КОМПАНИИ"}/>
+                            <Title title={t("company_mission")}/>
                         </div>
                         <motion.p
                             className={"text-sm mt-[10px] sm:text-base sm:mt-[20px] md:text-lg lg:text-xl xl:text-2xl"}
@@ -54,20 +57,12 @@ const MissionSection = () => {
                             viewport={{once: true}}
                             transition={{duration: 0.7}}
                         >
-                            Наша миссия - способствовать развитию цифровой экосистемы
-                            Республики
-                            Узбекистан, предоставляя высококачественные ИТ-решения и услуги по информационной
-                            безопасности. Опираясь
-                            на богатый опыт наших специалистов в ведущих системных интеграторах, мы стремимся стать
-                            надежным партнером
-                            для наших клиентов, обеспечивая им передовые технологии и инновационные подходы для
-                            достижения их
-                            бизнес-целей.
+                            {t("company_mission_desc")}
                         </motion.p>
                     </div>
                 </div>
                 <div className={"mt-[40px] lg:w-1/2 lg:mt-[70px]"}>
-                    <Title title={"ИСТОРИЯ КОМПАНИИ"}/>
+                    <Title title={t("history_company")}/>
                     <motion.p
                         className={"text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"}
                         initial={{opacity: 0, scale: 0.7}}
@@ -75,8 +70,7 @@ const MissionSection = () => {
                         viewport={{once: true}}
                         transition={{duration: 0.7}}
                     >
-                        Наша компания была создана в 2024 году, чтобы помочь бизнесу эффективно внедрять и использовать IT-технологии.
-                        Мы специализируемся на интеграции передовых решений, которые делают инфраструктуру компаний более надёжной, гибкой и готовой к вызовам.
+                        {t("history_company_desc")}
                     </motion.p>
                 </div>
             </div>

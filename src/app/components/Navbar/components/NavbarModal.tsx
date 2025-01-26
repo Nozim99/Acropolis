@@ -5,9 +5,11 @@ import {CloseIcon, MenuIcon} from "@/components/Icons";
 import {navList} from "@/app/utils/navList";
 import Link from "next/link";
 import {useState} from "react";
+import {useTranslation} from "react-i18next";
 
 
 const NavbarModal = () => {
+    const {t} = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
 
 
@@ -49,7 +51,8 @@ const NavbarModal = () => {
                                         <Link
                                             onClick={() => setIsOpen(false)}
                                             href={item.path}
-                                            key={item.path}>{item.label}
+                                            key={item.path}>
+                                            {t(item.label)}
                                         </Link>
                                     </motion.div>
                                 ))

@@ -6,9 +6,12 @@ import {MailIcon, PhoneIcon} from "@/components/Icons";
 import {socialMediaLinks} from "@/app/utils/social_media_list";
 import {navList} from "@/app/utils/navList";
 import Link from "next/link";
+import {useTranslation} from "react-i18next";
 
 
 const Footer = () => {
+    const {t} = useTranslation();
+
     return (
         <footer className={"bg-[#002B2C]"}>
             <div className={"mContainer pt-[30px] pb-[14px]"}>
@@ -36,7 +39,7 @@ const Footer = () => {
                             viewport={{once: true}}
                             transition={{ease: "easeOut", duration: 0.8}}
                         >
-                            Контакты
+                            {t("contact")}
                         </motion.h4>
                         <div
                             className={"flex items-center gap-x-[8px] mb-[14px] justify-center lg:gap-x-[4px] lg:text-sm xl:gap-x-[8px] xl:text-base"}>
@@ -95,7 +98,7 @@ const Footer = () => {
                             viewport={{once: true}}
                             transition={{ease: "easeOut", duration: 0.8}}
                         >
-                            Социальные сети
+                            {t("social_media")}
                         </motion.h4>
                         <ul className={"flex items-center justify-center gap-x-[16px]"}>{
                             socialMediaLinks.map((item, index) => (
@@ -125,7 +128,9 @@ const Footer = () => {
                                         viewport={{once: true}}
                                         transition={{ease: "easeOut", duration: 0.8, delay: 0.1 + index / 5}}
                                     >
-                                        <Link href={item.path}>{item.label}</Link>
+                                        <Link href={item.path}>
+                                            {t(item.label)}
+                                        </Link>
                                     </motion.li>
                                 ))
                             }</ul>
@@ -139,7 +144,7 @@ const Footer = () => {
                             viewport={{once: true}}
                             transition={{ease: "easeOut", duration: 0.8}}
                         >
-                            Адрес
+                            {t("address")}
                         </motion.h4>
                         <motion.p
                             initial={{opacity: 0, scale: 0.7}}
@@ -147,7 +152,7 @@ const Footer = () => {
                             viewport={{once: true}}
                             transition={{ease: "easeOut", duration: 0.8}}
                         >
-                            Республика Узбекистан, г. Ташкент 1-й Проезд Дархан, д. 7, БЦ &quot;TUT&quot;
+                            {t("current_address")}
                         </motion.p>
                     </div>
                 </div>

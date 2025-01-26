@@ -4,19 +4,22 @@ import {motion} from 'framer-motion';
 import Title from "@/components/Title";
 import {ChartIcon, PersonIcon, SuccessSettingIcon} from "@/components/Icons";
 import FormButton from "./FormButton"
+import {useTranslation} from "react-i18next";
 
 const Index = () => {
+    const {t} = useTranslation();
+
     const ourTargetsList = [
         {
-            title: "Качество нашей сети талантов",
+            title: t("feedback_1"),
             icon: <PersonIcon/>,
         },
         {
-            title: "Использование и внедрение нашего программного обеспечения",
+            title: t("feedback_2"),
             icon: <SuccessSettingIcon/>,
         },
         {
-            title: "Как мы помогаем продвигать инновации",
+            title: t("feedback_3"),
             icon: <ChartIcon/>,
         },
     ]
@@ -28,7 +31,7 @@ const Index = () => {
             >
 
 
-                <Title title={"Обратная связь"}/>
+                <Title title={t("feedback")}/>
                 <div
                     className={"grid grid-cols-1 gap-[20px] lg:grid-cols-2"}
                 >
@@ -53,7 +56,7 @@ const Index = () => {
                     {/* FORM */}
                     <form className={"flex flex-col gap-[5px] text-lg font-semibold md:text-xl lg:text-2xl"}>
                         <motion.input
-                            placeholder={"Имя "}
+                            placeholder={t("name")}
                             className={"input relative"}
                             type="text"
                             id={"name"}
@@ -63,7 +66,7 @@ const Index = () => {
                             transition={{ease: "easeOut", duration: 0.8}}
                         />
                         <motion.input
-                            placeholder={"E-mail"}
+                            placeholder={t("mail")}
                             className={"input relative"}
                             type="text"
                             id={"email"}
@@ -73,7 +76,7 @@ const Index = () => {
                             transition={{ease: "easeOut", duration: 0.8}}
                         />
                         <motion.input
-                            placeholder={"Название компании "}
+                            placeholder={t("company_name")}
                             className={"input relative"}
                             type="text"
                             id={"company"}

@@ -3,13 +3,14 @@
 import {motion} from 'framer-motion';
 import Image from "next/image";
 import NavbarModal from "./NavbarModal";
+import LanguageSelector from "@/app/components/LanguageInput";
 
 
 const NavbarMobile = () => {
     return (
         <>
             <motion.header
-                className={"bg-white sm:pt-[20px] sm:px-[10px] md:pt-[30px] md:px-[25px] lg:hidden "}
+                className={"bg-white sm:pt-[20px] sm:px-[10px] md:pt-[30px] md:px-[25px] lg:hidden"}
                 initial={{opacity: 0}}
                 whileInView={{opacity: 1,}}
                 viewport={{once: true}}
@@ -32,7 +33,10 @@ const NavbarMobile = () => {
                                 alt={"ACROPOLIS logo"}
                             />
                         </motion.div>
-                        <NavbarModal/>
+                        <div className={"flex items-center gap-[16px]"}>
+                            <LanguageSelector/>
+                            <NavbarModal/>
+                        </div>
                     </div>
                 </div>
             </motion.header>

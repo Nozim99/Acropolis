@@ -5,6 +5,7 @@ import Image from "next/image";
 import {createPortal} from "react-dom";
 import {useState} from "react";
 import Link from "next/link";
+import {useTranslation} from "react-i18next";
 
 
 interface IProps {
@@ -19,6 +20,7 @@ interface IProps {
 
 
 const CardItem = ({image, name, description, personImage, fullName, position, url}: IProps) => {
+    const {t} = useTranslation();
     const [isOpen, setIsOpen] = useState(false)
 
 
@@ -43,7 +45,9 @@ const CardItem = ({image, name, description, personImage, fullName, position, ur
                     transition={{duration: 0.7}}
                 >
                     <span>{name}</span>
-                    <Link target={"_blank"} href={url}>Описание</Link>
+                    <Link target={"_blank"} href={url}>
+                        {t("description")}
+                    </Link>
                 </motion.div>
             </div>
             {

@@ -1,13 +1,17 @@
 'use client'
 
 import {motion} from 'framer-motion';
-import {OrnamentIcon} from "@/components/Icons";
 import Image from "next/image";
-import {navList} from "@/app/utils/navList";
 import Link from "next/link";
+import {useTranslation} from "react-i18next";
+import {navList} from "@/app/utils/navList";
+import {OrnamentIcon} from "@/components/Icons";
 import LanguageSelector from "@/app/components/LanguageInput";
 
+
 const NavbarDesktop = () => {
+    const {t} = useTranslation();
+
     return (
         <motion.header
             className={"pb-[20px] bg-white hidden lg:block"}
@@ -46,7 +50,8 @@ const NavbarDesktop = () => {
                                 viewport={{once: true}}
                                 transition={{ease: "easeOut", duration: 0.6, delay: 0.8 + index / 5}}
                             >
-                                <Link href={item.path}>{item.label}</Link>
+                                <Link href={item.path}>{t(item.label)}</Link>
+                                {/*<Link href={item.path}>{item.label}</Link>*/}
                             </motion.li>
                         ))
                     }

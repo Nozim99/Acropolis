@@ -4,24 +4,27 @@ import {motion} from "framer-motion"
 import Title from "@/components/Title";
 import Image from "next/image";
 import {MiniOrnament} from "@/components/Icons";
+import {useTranslation} from "react-i18next";
 
 export const SolutionSection = () => {
+    const {t} = useTranslation();
+
     const statisticList = [
         {
             img: "/assets/laptops-setting.png",
-            title: "ИТ-инфраструктура",
+            title: t("solution_1"),
             width: 118,
             height: 113,
         },
         {
             img: "/assets/pc-setting.png",
-            title: "Системное ПО",
+            title: t("solution_2"),
             width: 123,
             height: 115,
         },
         {
             img: "/assets/world-security.png",
-            title: "Информационная безопасность",
+            title: t("solution_3"),
             width: 122,
             height: 122,
         },
@@ -36,7 +39,7 @@ export const SolutionSection = () => {
                     ))}
                 </div>
 
-                <Title title={"РЕШЕНИЯ"}/>
+                <Title title={t("solution")}/>
                 <ul className={"grid grid-cols-1 gap-y-[20px] sm:grid-cols-3 lg:gap-[15px] xl:gap-0"}>
                     {statisticList.map((item, index) => (
                         <motion.li

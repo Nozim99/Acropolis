@@ -2,8 +2,11 @@
 
 import {motion} from 'framer-motion';
 import {MiniOrnament} from "@/components/Icons";
+import {useTranslation} from "react-i18next";
 
 const PartnersSection = () => {
+    const {t} = useTranslation();
+
     const partnersList = Array(12).fill("");
 
     return (
@@ -24,7 +27,7 @@ const PartnersSection = () => {
                     transition={{ease: "easeOut", duration: 0.8}}
                     className={"text-center font-bold text-2xl mb-[18px] sm:text-3xl md:text-4xl mg:text-5xl relative"}
                 >
-                    ПАРТНЕРЫ
+                    {t("title_partner")}
                 </motion.h2>
                 <motion.p
                     initial={{opacity: 0, top: 40, scale: 0.7}}
@@ -33,9 +36,7 @@ const PartnersSection = () => {
                     transition={{ease: "easeOut", duration: 0.8}}
                     className={"font-light sm:text-lg md:text-xl lg:text-2xl text-center relative"}
                 >
-                    Мы сотрудничаем с ведущими мировыми производителями
-                    оборудования
-                    и ПО, что позволяет нам предлагать только проверенные решения:
+                    {t("partner_desc")}
                 </motion.p>
                 <ul
                     className={"grid grid-cols-2 mt-[20px] gap-[20px] sm:grid-cols-3 md:grid-cols-4 lg:w-[870px] lg:mx-auto xl:w-[900px] md:mt-[30px] lg:mt-[46px]"}
@@ -49,7 +50,11 @@ const PartnersSection = () => {
                             viewport={{once: true}}
                             transition={{ease: "easeOut", duration: 0.8}}
                         >
-
+                            <img
+                                className={"w-full h-full object-center object-cover"}
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ679zk_tF5B_qb73nrzPSa3WwlfHXdCxtS6A&s"
+                                alt=""
+                            />
                         </motion.li>
                     ))}</ul>
             </div>

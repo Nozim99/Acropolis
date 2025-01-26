@@ -1,9 +1,12 @@
 'use client'
 
 import {motion} from 'framer-motion'
+import {useTranslation} from "react-i18next";
 
 
 const MainSection = () => {
+    const {t} = useTranslation()
+
     return (
         <section className={"bg-white w-full overflow-hidden relative pt-[30px]"}>
             <div
@@ -16,7 +19,7 @@ const MainSection = () => {
                     viewport={{once: true}}
                     transition={{duration: 0.7}}
                 >
-                    Что мы делаем и почему это важно
+                    {t("about_us_title")}
                 </motion.h1>
                 <div className={"mt-[30px] ml-[20px]"}>
                     <motion.div
@@ -33,8 +36,7 @@ const MainSection = () => {
                         viewport={{once: true}}
                         transition={{duration: 0.7}}
                     >
-                        За эти годы мы накопили глубокую экспертизу в разнообразных областях IT, что позволяет нам понимать потребности бизнеса и предлагать инновационные подходы.
-                        Мы понимаем бизнес наших заказчиков, умеем адаптироваться к его особенностям и всегда нацелены на долгосрочный успех.
+                        {t("about_us_desc")}
                     </motion.p>
                 </div>
             </div>

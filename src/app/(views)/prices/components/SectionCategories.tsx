@@ -4,25 +4,28 @@ import {motion} from 'framer-motion';
 import Image from "next/image";
 import MnFAQItem from "./MnFAQItem"
 import {MiniOrnament} from "@/components/Icons";
+import {useTranslation} from "react-i18next";
 
 
 const SectionCategories = () => {
+    const {t} = useTranslation();
+
     const pricesList = [
         {
-            title: "Консалтинг, аудит ИБ/ИТ (обследование)",
-            description: "Предоставляем профессиональные услуги по консалтингу и аудиту в сфере информационной безопасности и IT. Наши эксперты проводят детальное обследование, анализ текущих систем и предлагают рекомендации для повышения уровня безопасности и эффективности вашей IT-инфраструктуры."
+            title: t("service_1"),
+            description: t("service_desc_1")
         },
         {
-            title: "Проектирование",
-            description: "Мы разрабатываем индивидуальные проектные решения, соответствующие вашим бизнес-целям и требованиям. В процессе проектирования учитываются современные технологии и лучшие практики, чтобы создать надёжную IT-инфраструктуру, адаптированную к вашим задачам."
+            title: t("service_2"),
+            description: t("service_desc_2")
         },
         {
-            title: "Пусконаладка",
-            description: "Наши услуги включают комплексные работы по настройке, тестированию и запуску IT-систем. Мы обеспечиваем корректную интеграцию оборудования и программного обеспечения, чтобы гарантировать стабильность и бесперебойную работу системы."
+            title: t("service_3"),
+            description: t("service_desc_3")
         },
         {
-            title: "Сервисная поддержка",
-            description: "Оказываем профессиональную техническую поддержку и обслуживание ваших IT-систем. Наши специалисты обеспечивают оперативное решение возникающих проблем, регулярное обновление систем и их стабильную работу для достижения ваших бизнес-целей."
+            title: t("service_4"),
+            description: t("service_desc_4")
         }
     ];
 
@@ -64,7 +67,7 @@ const SectionCategories = () => {
                         viewport={{once: true}}
                         transition={{duration: 0.7}}
                     >
-                        УСЛУГИ
+                        {t("prices")}
                     </motion.h2>
                     <div className={"flex flex-col gap-[8px]"}>
                         {pricesList.map((item, index) => (

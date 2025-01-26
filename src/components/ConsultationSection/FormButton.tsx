@@ -3,8 +3,10 @@
 import {motion} from "framer-motion";
 import {sendMessage} from "@/utils/telegram";
 import {useState} from "react";
+import {useTranslation} from "react-i18next";
 
 const FormButton = () => {
+    const {t} = useTranslation();
     const [isLoading, setIsLoading] = useState(false);
 
     const onSubmit = () => {
@@ -45,7 +47,7 @@ const FormButton = () => {
             transition={{ease: "easeOut", duration: 0.8}}
 
         >
-            Отправить
+            {t("send")}
         </motion.button>
     )
 }

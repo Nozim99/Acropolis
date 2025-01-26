@@ -2,36 +2,39 @@
 
 import {motion} from 'framer-motion'
 import Image from "next/image";
+import {useTranslation} from "react-i18next";
 
 const NotAllSection = () => {
+    const {t} = useTranslation()
+
     const cardList = [
         {
-            title: "Надежное партнерство",
+            title: t("it_is_not_all_card_1_title"),
             image: "/assets/card-handshake.png",
             width: 370,
             height: 193,
-            description: "Стремление стать надежным партнером означает, что мы ориентированы на долгосрочное сотрудничество, понимаем потребности заказчиков и готовы поддерживать их на каждом этапе развития",
+            description: t("it_is_not_all_card_1_desc"),
         },
         {
-            title: "Поддержка бизнес-целей заказчиков",
+            title: t("it_is_not_all_card_2_title"),
             image: "/assets/card-chart.png",
             width: 139,
             height: 100,
-            description: "Наш фокус на достижении бизнес-целей клиентов обеспечивает индивидуальный подход и решения, которые непосредственно способствуют успеху их бизнеса.",
+            description: t("it_is_not_all_card_2_desc"),
         },
         {
-            title: "Комплексный подход к ИТ и ИБ",
+            title: t("it_is_not_all_card_3_title"),
             image: "/assets/card-it.png",
             width: 218,
             height: 263,
-            description: "Объединяя экспертизу в области информационных технологий и информационной безопасности, мы предлагаем комплексные решения, которые не только улучшают эффективность.",
+            description: t("it_is_not_all_card_3_desc"),
         },
         {
-            title: "Развитие цифровой экосистемы региона",
+            title: t("it_is_not_all_card_4_title"),
             image: "/assets/card-hand-plant.png",
             width: 212,
             height: 213,
-            description: "Участвуя в развитии цифровой инфраструктуры Узбекистана, мы способствуем созданию благоприятных условий для роста бизнеса наших заказчиков в регионе.",
+            description: t("it_is_not_all_card_4_desc"),
         },
     ]
 
@@ -45,7 +48,7 @@ const NotAllSection = () => {
                     viewport={{once: true}}
                     transition={{duration: 0.7}}
                 >
-                    ЭТО ЕЩЕ НЕ ВСЁ
+                    {t("it_is_not_all")}
                 </motion.h2>
                 <motion.p
                     className={"text-sm mb-[30px] text-white sm:text-base md:text-lg lg:font-light lg:text-xl xl:text-2xl sm:mb-[35px] md:mb-[40px] lg:mb-[50px] xl:mb-[60px]"}
@@ -54,16 +57,7 @@ const NotAllSection = () => {
                     viewport={{once: true}}
                     transition={{duration: 0.7}}
                 >
-                    Мы
-                    ценим настоящие партнерские отношения, глубоко вникаем
-                    в
-                    бизнес-цели наших заказчиков, чтобы эффективно поддержать их достижения. Применяя комплексный подход
-                    к ИТ и
-                    информационной безопасности, мы создаём решения, которые объединяют инновации с надёжностью. Вместе
-                    мы
-                    ускоряем развитие цифровой экосистемы региона, превращая технологические возможности в реальное
-                    преимущество
-                    для бизнеса.
+                    {t("it_is_not_all_desc")}
                 </motion.p>
                 <ul className={"grid grid-cols-1 gap-y-[24px] font-medium text-lg text-white sm:grid-cols-2 md:text-2xl lg:gap-y-[32px] lg:text-3xl xl:text-4xl"}>
                     {cardList.map((item, index) => (

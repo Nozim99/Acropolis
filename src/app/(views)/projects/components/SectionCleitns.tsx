@@ -1,7 +1,9 @@
 import {MiniOrnament} from "@/components/Icons";
 import CardItem from "@/app/(views)/projects/components/CardItem";
 
+
 const SectionClients = () => {
+
     const clientsList = [
         {
             name: "Tech Innovators",

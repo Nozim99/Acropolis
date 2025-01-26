@@ -3,15 +3,18 @@
 import {motion} from 'framer-motion'
 import Title from "@/components/Title";
 import {TechnologyLampIcon, WorkGroupIcon} from "@/components/Icons";
+import {useTranslation} from "react-i18next";
 
 const WhyUsSection = () => {
+    const {t} = useTranslation()
+
     return (
         <section className={"bg-white overflow-hidden"}>
             <div
                 className={"mContainer pt-[25px] pb-[30px] relative sm:pt-[30px] md:pt-[40px] lg:pt-[50px] xl:pt-[60px] sm:pb-[50px] md:pb-[70px] lg:pb-[100px] xl:pb-[110px]"}>
 
                 <Title
-                    title={"ПОЧЕМУ МЫ?"}
+                    title={t("why_us")}
                     className={"text-[var(--darkBlue)]"}
                     mb={"mb-[30px] md:mb-[50px] xl:mb-[60px] 2xl:mb-[70px]"}
                 />
@@ -39,7 +42,7 @@ const WhyUsSection = () => {
                             viewport={{once: true}}
                             transition={{duration: 0.7}}
                         >
-                            Высокое качество услуг и решений
+                            {t("why_us_1")}
                         </motion.h4>
                     </div>
                     <div className={"w-[270px] text-center"}>
@@ -59,7 +62,7 @@ const WhyUsSection = () => {
                             viewport={{once: true}}
                             transition={{duration: 0.7}}
                         >
-                            Опытные специалисты
+                            {t("why_us_2")}
                         </motion.h4>
                     </div>
                     <div className={"w-[278px] text-center"}>
@@ -79,7 +82,7 @@ const WhyUsSection = () => {
                             viewport={{once: true}}
                             transition={{duration: 0.7}}
                         >
-                            Передовые технологии и инновации
+                            {t("why_us_3")}
                         </motion.h4>
                     </div>
                 </div>

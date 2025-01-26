@@ -1,9 +1,12 @@
 'use client'
 
 import {motion} from 'framer-motion';
+import {useTranslation} from "react-i18next";
 
 
 const MainSection = () => {
+    const {t} = useTranslation();
+
     return (
         <motion.section
             className={"bg-white w-full overflow-hidden relative ease-out pt-[30px]"}
@@ -21,7 +24,7 @@ const MainSection = () => {
                     transition={{duration: 0.8, ease: "easeOut", delay: 0.6}}
                     className={"text-[var(--orange)] font-bold text-4xl text-center pb-[40px] md:text-5xl lg:text-start lg:text-6xl xl:text-[100px] xl:leading-[7rem] relative"}
                 >
-                    <span className={"text-[var(--darkBlue)]"}>Мы -</span> команда экспертов
+                    <span className={"text-[var(--darkBlue)]"}>{t("we")} -</span> {t("group_exprest")}
                 </motion.h1>
                 <motion.div
                     className={"relative top-[50px]"}
@@ -33,8 +36,7 @@ const MainSection = () => {
                     <div
                         className={"w-[40px] h-[3px] bg-gradient-to-r from-[#D09714] to-[#6A4D0A] mb-[10px] mx-auto sm:w-[60px] md:w-[100px] lg:w-[60px] lg:mx-0 xl:w-[60px] xl:h-[5px] xl:mb-[34px]"}></div>
                     <p className={"font-normal text-sm text-center text-[var(--darkBlue)] sm:text-base md:text-xl lg:text-start xl:font-light xl:text-2xl"}>
-                        Наша команда состоит из высококвалифицированных специалистов и обладает богатым опытом работы в
-                        ведущих международных ИТ-компаниях, крупных банках и телекоммуникационных операторах.
+                        {t("home_title")}
                     </p>
                 </motion.div>
             </div>

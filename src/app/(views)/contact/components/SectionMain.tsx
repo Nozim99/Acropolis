@@ -1,8 +1,11 @@
 'use client'
 
 import {motion} from 'framer-motion'
+import {useTranslation} from "react-i18next";
 
 const SectionMain = () => {
+    const {t} = useTranslation();
+
     return (
         <section className={"bg-white w-full overflow-hidden relative pt-[30px]"}>
             <div
@@ -26,7 +29,7 @@ const SectionMain = () => {
                     viewport={{once: true}}
                     transition={{duration: 0.7}}
                 >
-                    Контакты
+                    {t("contact")}
                 </motion.h1>
                 <div className={"mt-[30px] min-[320px]:w-[300px] mx-auto sm:w-[340px] md:w-[420px] lg:w-5/12 lg:mx-0"}>
                     <motion.div
@@ -43,7 +46,7 @@ const SectionMain = () => {
                         viewport={{once: true}}
                         transition={{duration: 0.7}}
                     >
-                        Имея более чем 10-летний опыт работы в ИТ, мы умеем решать актуальные задачи наших клиентов
+                        {t("experience_desc")}
                     </motion.p>
                 </div>
             </div>

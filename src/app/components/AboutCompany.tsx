@@ -4,8 +4,11 @@ import {motion} from 'framer-motion'
 import Image from "next/image";
 import Title from "@/components/Title";
 import {MiniOrnament} from "@/components/Icons";
+import {useTranslation} from "react-i18next";
 
 const AboutSection = () => {
+    const {t} = useTranslation();
+
     return (
         <section className={"overflow-hidden"}>
             <div
@@ -18,7 +21,7 @@ const AboutSection = () => {
 
                 <div className="grid grid-cols-1 relative lg:grid-cols-2">
                     <div className={"grid justify-center sm:mb-[10px]"}>
-                        <Title title={"О КОМПАНИИ"}/>
+                        <Title title={t("about_company")}/>
                         <motion.div
                             className={"relative"}
                             initial={{opacity: 0, scale: 0.4, top: "50px"}}
@@ -57,13 +60,7 @@ const AboutSection = () => {
                                 viewport={{once: true}}
                                 transition={{ease: "easeOut", duration: 0.8}}
                             >
-                                Мы специализируемся на внедрении комплексных решений для автоматизации бизнес-процессов,
-                                создании
-                                надежной,
-                                отказоустойчивой и масштабируемой ИТ-инфраструктуры, обеспечении ее безопасности и
-                                повышения
-                                эффективности
-                                работы компаний.
+                                {t("about_company_description_1")}
                             </motion.p>
                             <motion.p
                                 className={"relative"}
@@ -72,11 +69,7 @@ const AboutSection = () => {
                                 viewport={{once: true}}
                                 transition={{ease: "easeOut", duration: 0.8}}
                             >
-                                Независимо от сложности задачи, наша команда всегда готова предложить инновационные,
-                                высокотехнологичные
-                                решения, соответствующие вашим потребностям. От аудита и проектирования до внедрения,
-                                обучения персонала и
-                                технической поддержки – мы сопровождаем клиента на всех этапах проекта.
+                                {t("about_company_description_2")}
                             </motion.p>
                         </div>
                         <motion.button
@@ -86,7 +79,7 @@ const AboutSection = () => {
                             viewport={{once: true}}
                             transition={{ease: "easeOut", duration: 0.6}}
                         >
-                            Узнать подробнее
+                            {t("find_out_more")}
                         </motion.button>
                     </div>
                 </div>
