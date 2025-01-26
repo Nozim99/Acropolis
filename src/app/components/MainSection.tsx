@@ -6,7 +6,7 @@ import {motion} from 'framer-motion';
 const MainSection = () => {
     return (
         <motion.section
-            className={"bg-white w-full overflow-hidden relative ease-out"}
+            className={"bg-white w-full overflow-hidden relative ease-out pt-[30px]"}
             initial={{opacity: 0}}
             whileInView={{opacity: 1}}
             viewport={{once: true}}

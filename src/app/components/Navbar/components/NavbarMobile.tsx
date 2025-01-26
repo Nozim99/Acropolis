@@ -9,7 +9,7 @@ const NavbarMobile = () => {
     return (
         <>
             <motion.header
-                className={"bg-white pb-[30px] sm:pt-[20px] sm:px-[10px] md:pt-[30px] md:px-[25px] lg:hidden"}
+                className={"bg-white sm:pt-[20px] sm:px-[10px] md:pt-[30px] md:px-[25px] lg:hidden "}
                 initial={{opacity: 0}}
                 whileInView={{opacity: 1,}}
                 viewport={{once: true}}

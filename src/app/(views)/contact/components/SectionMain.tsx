@@ -4,7 +4,7 @@ import {motion} from 'framer-motion'
 
 const SectionMain = () => {
     return (
-        <section className={"bg-white w-full overflow-hidden relative"}>
+        <section className={"bg-white w-full overflow-hidden relative pt-[30px]"}>
             <div
                 className={"mContainer pt-[10px] pb-[40px] items-center relative sm:pt-[20px] sm:pb-[60px] md:pt-[40px] md:pb-[80px] lg:pt-[80px] lg:pb-[130px] xl:pt-[100px] xl:pb-[160px]"}>
                 <motion.img

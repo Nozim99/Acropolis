@@ -88,7 +88,8 @@ const NotAllSection = () => {
                                          width={item.width} height={item.height}/>
                             }
                             <p className={"w-5/6 relative top-0 card_title"}>{item.title}</p>
-                            <p className={"text-2xl card_description absolute top-[50px] left-[50px] opacity-0 scale-[0.3] w-full h-full"}>
+                            {/*<p className={"text-2xl card_description absolute top-[50px] left-[50px] opacity-0 scale-[0.3] w-full h-full"}>*/}
+                            <p className={"text-xs md:text-base lg:text-xl xl:text-2xl card_description absolute top-[50px] left-[50px] opacity-0 scale-[0.3] w-full h-full"}>
                                 {item.description}
                             </p>
                         </motion.li>

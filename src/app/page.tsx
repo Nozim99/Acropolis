@@ -9,7 +9,7 @@ import ConsultationSection from "@/components/ConsultationSection";
 
 export default function Home() {
     return (
-        <div>
+        <div className={""}>
             <MainSection/>
             <AboutCompany/>
             <FactsAboutUs/>

@@ -5,7 +5,7 @@ import {motion} from 'framer-motion'
 
 const MainSection = () => {
     return (
-        <section className={"bg-white w-full overflow-hidden relative"}>
+        <section className={"bg-white w-full overflow-hidden relative pt-[30px]"}>
             <div
                 className={"mContainer pb-[30px] items-center relative sm:pb-[40px] sm:pt-[10px] md:pt-[30px] md:pb-[60px] lg:pt-[80px] lg:pb-[120px] xl:pt-[100px] xl:pb-[160px]"}>
 
