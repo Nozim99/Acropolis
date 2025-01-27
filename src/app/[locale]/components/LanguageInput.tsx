@@ -5,7 +5,7 @@ import {RuIcon, UKIcon, UzIcon} from "@/components/Icons";
 import {useState} from "react";
 import {createPortal} from "react-dom";
 import {useTranslation} from "react-i18next";
-import {Link, redirect, usePathname} from "@/i18n/routing";
+import {Link, usePathname} from "@/i18n/routing";
 
 
 const languages = [
