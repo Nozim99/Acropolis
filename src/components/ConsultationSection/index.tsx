@@ -4,10 +4,11 @@ import {motion} from 'framer-motion';
 import Title from "@/components/Title";
 import {ChartIcon, PersonIcon, SuccessSettingIcon} from "@/components/Icons";
 import FormButton from "./FormButton"
-import {useTranslation} from "react-i18next";
+import {useTranslations} from 'next-intl';
+
 
 const Index = () => {
-    const {t} = useTranslation();
+    const t = useTranslations("Home");
 
     const ourTargetsList = [
         {

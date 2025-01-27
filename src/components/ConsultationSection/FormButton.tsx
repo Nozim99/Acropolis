@@ -3,10 +3,10 @@
 import {motion} from "framer-motion";
 import {sendMessage} from "@/utils/telegram";
 import {useState} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslations} from 'next-intl';
 
 const FormButton = () => {
-    const {t} = useTranslation();
+    const t = useTranslations("Home");
     const [isLoading, setIsLoading] = useState(false);
 
     const onSubmit = () => {
