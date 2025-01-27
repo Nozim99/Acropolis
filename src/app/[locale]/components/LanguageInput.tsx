@@ -4,8 +4,8 @@ import {motion} from 'framer-motion';
 import {RuIcon, UKIcon, UzIcon} from "@/components/Icons";
 import {useState} from "react";
 import {createPortal} from "react-dom";
-import {useTranslation} from "react-i18next";
 import {Link, usePathname} from "@/i18n/routing";
+import {useParams} from "next/navigation";
 
 
 const languages = [
@@ -16,11 +16,14 @@ const languages = [
 
 
 const LanguageSelector = () => {
+    const {locale} = useParams()
     const pathname = usePathname()
-    const {i18n} = useTranslation();
-    const current_lng = i18n.language
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedLanguage, setSelectedLanguage] = useState(current_lng?.toUpperCase() || languages[0].title);
+    const [selectedLanguage, setSelectedLanguage] = useState<string>(
+        Array.isArray(locale)
+            ? locale?.[0].toLowerCase() || languages[0].title
+            : locale?.toUpperCase() || languages[0].title
+    );
 
 
     const changeHandler = (value: string): void => {
@@ -40,7 +43,8 @@ const LanguageSelector = () => {
                     transition={{ease: "easeOut", duration: 0.6, delay: 2}}
                 >
                     <span className={"hidden lg:inline-block"}>{selectedLanguage}</span>
-                    <span className={"scale-[0.85] lg:scale-100"}>{languages.find(item => item.title === selectedLanguage)?.icon}</span>
+                    <span
+                        className={"scale-[0.85] lg:scale-100"}>{languages.find(item => item.title === selectedLanguage)?.icon}</span>
                 </motion.button>
 
                 <ul
