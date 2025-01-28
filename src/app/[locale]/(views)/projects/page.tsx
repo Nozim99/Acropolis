@@ -1,4 +1,4 @@
-import SectionMain from "./components/SectionMain"
+// import SectionMain from "./components/SectionMain"
 import SectionClients from "./components/SectionCleitns";
 import ConsultationSection from "@/components/ConsultationSection";
 
