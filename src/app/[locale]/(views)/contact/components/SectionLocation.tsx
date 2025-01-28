@@ -25,7 +25,7 @@ const SectionLocation = () => {
                     transition={{duration: 0.7, ease: "easeOut"}}
                 >
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2117.451650038582!2d69.29819716426648!3d41.36259364267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1736683817641!5m2!1sen!2s"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.1430020208163!2d69.23656690267194!3d41.309472976197135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8ba631287063%3A0x96f620e36340d860!2sDarkhan%20St%207%2C%20Tashkent%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1738080682163!5m2!1sen!2s"
                         width="100%"
                         height="100%"
                         style={{border: 0}}

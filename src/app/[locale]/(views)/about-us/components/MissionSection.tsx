@@ -44,7 +44,8 @@ const MissionSection = () => {
                         viewport={{once: true}}
                         transition={{duration: 0.7}}
                     >
-                        <Image src={"/assets/3-people.png"} width={622} height={435} alt={"image"}/>
+                        {/*<Image src={"/assets/3-people.png"} width={622} height={435} alt={"image"}/>*/}
+                        <Image className={"object-cover w-full object-center"} src={"/assets/about-us-image.jpg"} width={622} height={435} alt={"image"}/>
                     </motion.div>
                     <div>
                         <div className={"hidden lg:block lg:mt-[15px]"}>

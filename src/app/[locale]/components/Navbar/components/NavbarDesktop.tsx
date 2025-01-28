@@ -12,7 +12,7 @@ import {Link, usePathname} from "@/i18n/routing";
 const NavbarDesktop = () => {
     const t = useTranslations("Home");
     const pathname = usePathname()
-    const isSpecialPath = ['/contact', '/solutions', '/prices'].includes(pathname);
+    const isSpecialPath = ['/contact', '/solutions', '/prices', '/projects'].includes(pathname);
 
     return (
         <motion.header

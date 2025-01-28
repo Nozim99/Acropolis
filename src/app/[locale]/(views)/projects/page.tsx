@@ -5,7 +5,7 @@ import ConsultationSection from "@/components/ConsultationSection";
 
 const ClientsPage = () => {
     return <div>
-        <SectionMain/>
+        {/*<SectionMain/>*/}
         <div className={"overflow-hidden"}>
             <SectionClients/>
             <ConsultationSection/>
