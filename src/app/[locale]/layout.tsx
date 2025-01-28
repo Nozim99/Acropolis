@@ -40,7 +40,7 @@ export default async function RootLayout({
     return (
         <html lang={locale}>
         <body
-            className={`${inter.variable} antialiased`}
+            className={`${inter.variable} antialiased `}
         >
         <NextIntlClientProvider messages={messages}>
             <Navbar/>

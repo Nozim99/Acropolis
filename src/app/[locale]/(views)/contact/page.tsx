@@ -1,4 +1,4 @@
-import SectionMain from "./components/SectionMain"
+// import SectionMain from "./components/SectionMain"
 import SectionLocation from "./components/SectionLocation"
 import ConsultationSection from "@/components/ConsultationSection";
 
@@ -6,7 +6,7 @@ import ConsultationSection from "@/components/ConsultationSection";
 const ContactPage = () => {
     return (
         <div>
-            <SectionMain/>
+            {/*<SectionMain/>*/}
             <div className={"overflow-hidden"}>
                 <SectionLocation/>
                 <ConsultationSection/>

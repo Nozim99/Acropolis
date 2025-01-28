@@ -28,15 +28,17 @@ const Index = () => {
     return (
         <section className={"overflow-hidden"}>
             <div
-                className={"mContainer pt-[20px] pb-[30px] relative sm:pt-[30px] sm:pb-[40px] md:pt-[60px] md:pb-[50px] lg:pt-[100px] lg:pb-[80px] xl:pt-[116px] xl:pb-[96px]"}
+                className={`mContainer pt-[20px] pb-[30px] relative sm:pt-[30px] sm:pb-[40px] md:pt-[60px] md:pb-[50px] lg:pt-[100px] lg:pb-[80px] xl:pt-[116px] xl:pb-[96px]
+                md:w-[600px] lg:w-[800px]`}
             >
 
 
                 <Title title={t("feedback")}/>
                 <div
-                    className={"grid grid-cols-1 gap-[20px] lg:grid-cols-2"}
+                    // className={"grid grid-cols-1 gap-[20px] lg:grid-cols-2"}
+                    className={""}
                 >
-                    <div>
+                    <div className={"hidden"}>
                         <ul
                             className={"font-medium text-sm grid gap-[8px] sm:text-lg md:w-[600px] md:mx-auto lg:w-full lg:text-lg lg:font-semibold xl:font-bold"}
                         >

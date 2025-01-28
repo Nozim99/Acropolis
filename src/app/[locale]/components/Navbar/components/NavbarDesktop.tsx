@@ -6,15 +6,17 @@ import {navList} from "@/app/[locale]/utils/navList";
 import {OrnamentIcon} from "@/components/Icons";
 import {useTranslations} from 'next-intl';
 import LanguageSelector from "@/app/[locale]/components/LanguageInput";
-import {Link} from "@/i18n/routing";
+import {Link, usePathname} from "@/i18n/routing";
 
 
 const NavbarDesktop = () => {
     const t = useTranslations("Home");
+    const pathname = usePathname()
+    const isSpecialPath = ['/contact', '/solutions', '/prices'].includes(pathname);
 
     return (
         <motion.header
-            className={"pb-[20px] bg-white hidden lg:block"}
+            className={`${isSpecialPath ? "" : "bg-white"} pb-[20px] hidden lg:block`}
             initial={{opacity: 0}}
             whileInView={{opacity: 1}}
             viewport={{once: true}}
@@ -31,7 +33,7 @@ const NavbarDesktop = () => {
             </motion.div>
             <div className={"h-[60px]"}></div>
             <nav
-                className={"flex justify-between items-center px-[25px] py-[8px] container mx-auto bg-[var(--darkBlue)] rounded-[14px] font-light text-xl xl:text-2xl"}>
+                className={`${isSpecialPath ? "shadow-lg border border-black/10" : ""} flex justify-between items-center px-[25px] py-[8px] container mx-auto bg-[var(--darkBlue)] rounded-[14px] font-light text-xl xl:text-2xl`}>
                 <motion.div
                     initial={{opacity: 0, scale: 0.7}}
                     whileInView={{opacity: 1, scale: 1}}

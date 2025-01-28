@@ -4,10 +4,26 @@ import {motion} from 'framer-motion';
 import {MiniOrnament} from "@/components/Icons";
 import {useTranslations} from 'next-intl';
 
+
+const partners_images = [
+    'commvault.jpeg',
+    'Fortinet .png',
+    'Hitachi.png',
+    'Juniper_Networks.png',
+    'Lenovo.png',
+    'Nutanix.jpeg',
+    'Oracle.png',
+    'Red_Hat.svg',
+    'tenable.png',
+    'trend_micro.jpeg',
+    'veeam.png',
+    'vertiv.jpeg'
+]
+
+
 const PartnersSection = () => {
     const t = useTranslations("Home");
 
-    const partnersList = Array(12).fill("");
 
     return (
         <section className={""}>
@@ -41,18 +57,18 @@ const PartnersSection = () => {
                 <ul
                     className={"grid grid-cols-2 mt-[20px] gap-[20px] sm:grid-cols-3 md:grid-cols-4 lg:w-[870px] lg:mx-auto xl:w-[900px] md:mt-[30px] lg:mt-[46px]"}
                 >
-                    {partnersList.map((item, index) => (
+                    {partners_images.map((img_url, index) => (
                         <motion.li
                             key={index}
-                            className={"h-[120px] bg-white lg:w-[198px] lg:mx-auto xl:h-[140px] relative"}
+                            className={"h-[120px] bg-white lg:w-[198px] lg:mx-auto xl:h-[140px] relative flex items-center justify-center"}
                             initial={{opacity: 0, top: 40, scale: 0.7}}
                             whileInView={{opacity: 1, top: 0, scale: 1}}
                             viewport={{once: true}}
                             transition={{ease: "easeOut", duration: 0.8}}
                         >
                             <img
-                                className={"w-full h-full object-center object-cover"}
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ679zk_tF5B_qb73nrzPSa3WwlfHXdCxtS6A&s"
+                                className={"w-5/6 h-5/6 object-center object-contain"}
+                                src={'/assets/partners/' + img_url}
                                 alt=""
                             />
                         </motion.li>
