@@ -5,20 +5,20 @@ import {MiniOrnament} from "@/components/Icons";
 import {useTranslations} from 'next-intl';
 
 
-const partners_images = [
-    'commvault.jpeg',
-    'Fortinet .png',
-    'Hitachi.png',
-    'Juniper_Networks.png',
-    'Lenovo.png',
-    'Nutanix.jpeg',
-    'Oracle.png',
-    'Red_Hat.svg',
-    'tenable.png',
-    'trend_micro.jpeg',
-    'veeam.png',
-    'vertiv.jpeg'
-]
+// const partners_images = [
+//     'commvault.jpeg',
+//     'Fortinet .png',
+//     'Hitachi.png',
+//     'Juniper_Networks.png',
+//     'Lenovo.png',
+//     'Nutanix.jpeg',
+//     'Oracle.png',
+//     'Red_Hat.svg',
+//     'tenable.png',
+//     'trend_micro.jpeg',
+//     'veeam.png',
+//     'vertiv.jpeg'
+// ]
 
 
 interface PropsType {
@@ -33,7 +33,7 @@ const PartnersSection = ({clientsData}: PropsType) => {
 
 
     return (
-        <section className={""}>
+        <section className={""} id={"partner-section"}>
             <div
                 className={"mContainer relative pt-[30px] pb-[38px] sm:pt-[40px] md:pt-[60px] lg:pt-[127px] sm:pb-[48px] md:pb-[58px] lg:pb-[68px]"}
             >

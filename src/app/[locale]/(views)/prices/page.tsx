@@ -5,13 +5,19 @@ import axios from "axios";
 import {BASE_URL} from "@/utils/constants";
 
 const PricesPage = async () => {
-    const data = await axios.get(BASE_URL + "/services")
+    let servicesData;
+
+    try {
+        servicesData = await axios.get(BASE_URL + "/services")
+    } catch (error) {
+        console.error("API Error", error);
+    }
 
     return (
         <div>
             {/*<SectionMain/>*/}
             <div className={"overflow-hidden"}>
-                <SectionCategories servicesData={data?.data} />
+                <SectionCategories servicesData={servicesData?.data} />
                 <ConsultationSection/>
             </div>
         </div>

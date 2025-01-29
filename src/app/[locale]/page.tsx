@@ -10,7 +10,13 @@ import {BASE_URL} from "@/utils/constants";
 
 
 export default async function Home() {
-    const data = await axios.get(BASE_URL + "/clients")
+    let clientsData;
+
+    try {
+        clientsData = await axios.get(BASE_URL + "/clients")
+    } catch (error) {
+        console.error("API Error", error)
+    }
 
     return (
         <div className={""}>
@@ -20,7 +26,7 @@ export default async function Home() {
             <SolutionSection/>
             <ServicesSection/>
             <div className={"overflow-hidden"}>
-                <PartnersSection clientsData={data?.data?.clients} />
+                <PartnersSection clientsData={clientsData?.data?.clients} />
                 <ConsultationSection/>
             </div>
         </div>
