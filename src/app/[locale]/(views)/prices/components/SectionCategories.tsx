@@ -7,7 +7,15 @@ import {MiniOrnament} from "@/components/Icons";
 import {useTranslations} from 'next-intl';
 
 
-const SectionCategories = () => {
+interface PropsType {
+    servicesData?: {
+        _id: string;
+        title: string;
+        description: string;
+    }[]
+}
+
+const SectionCategories = ({servicesData}: PropsType) => {
     const t = useTranslations("Home");
 
     const pricesList = [
@@ -70,7 +78,7 @@ const SectionCategories = () => {
                         {t("prices")}
                     </motion.h2>
                     <div className={"flex flex-col gap-[8px]"}>
-                        {pricesList.map((item, index) => (
+                        {servicesData?.map((item, index) => (
                             <MnFAQItem
                                 key={index}
                                 itemNumber={"0" + (index + 1)}

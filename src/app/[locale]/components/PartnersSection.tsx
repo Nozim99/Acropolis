@@ -21,7 +21,14 @@ const partners_images = [
 ]
 
 
-const PartnersSection = () => {
+interface PropsType {
+    clientsData?: {
+        _id: string;
+        imageUrl: string;
+    }[]
+}
+
+const PartnersSection = ({clientsData}: PropsType) => {
     const t = useTranslations("Home");
 
 
@@ -57,7 +64,7 @@ const PartnersSection = () => {
                 <ul
                     className={"grid grid-cols-2 mt-[20px] gap-[20px] sm:grid-cols-3 md:grid-cols-4 lg:w-[870px] lg:mx-auto xl:w-[900px] md:mt-[30px] lg:mt-[46px]"}
                 >
-                    {partners_images.map((img_url, index) => (
+                    {clientsData?.map((image, index) => (
                         <motion.li
                             key={index}
                             className={"h-[120px] bg-white lg:w-[198px] lg:mx-auto xl:h-[140px] relative flex items-center justify-center"}
@@ -68,7 +75,8 @@ const PartnersSection = () => {
                         >
                             <img
                                 className={"w-5/6 h-5/6 object-center object-contain"}
-                                src={'/assets/partners/' + img_url}
+                                // className={"w-full h-full object-center object-cover"}
+                                src={image.imageUrl}
                                 alt=""
                             />
                         </motion.li>

@@ -17,6 +17,24 @@ const inter = Inter({
 
 export const metadata: Metadata = {
     title: "Acropolis",
+    description: "Наша команда состоит из высококвалифицированных специалистов и обладает богатым опытом работы в ведущих международных ИТ-компаниях, крупных банках и телекоммуникационных операторах.",
+    icons: {
+        icon: '/assets/title-logo.png'
+    },
+    openGraph: {
+        title: "Acropolis",
+        description: "Наша команда состоит из высококвалифицированных специалистов и обладает богатым опытом работы в ведущих международных ИТ-компаниях, крупных банках и телекоммуникационных операторах.",
+        url: "https://www.acropolis.com",
+        siteName: "Acropolis",
+        images: [
+            {
+                url: '/assets/acropolis-logo.png',
+                width: 800,
+                height: 600,
+                alt: 'Acropolis',
+            },
+        ],
+    }
 };
 
 
