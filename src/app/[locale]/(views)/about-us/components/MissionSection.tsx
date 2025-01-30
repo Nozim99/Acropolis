@@ -38,7 +38,7 @@ const MissionSection = () => {
                         <Title title={t("company_mission")}/>
                     </div>
                     <motion.div
-                        className="h-[200px] w-[300px] mx-auto bg-gradient-to-t from-[#FCC612B2] to-transparent flex justify-center sm:w-[320px] sm:h-[210] lg:h-[400px] lg:w-full xl:h-[435px]"
+                        className="h-[200px] w-[300px] mx-auto flex justify-center sm:w-[320px] sm:h-[210] lg:h-[400px] lg:w-full xl:h-[435px] items-center"
                         initial={{opacity: 0, scale: 0.7}}
                         whileInView={{opacity: 1, scale: 1}}
                         viewport={{once: true}}

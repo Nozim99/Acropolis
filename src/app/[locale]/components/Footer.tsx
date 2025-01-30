@@ -5,7 +5,7 @@ import Image from "next/image";
 import {MailIcon, PhoneIcon} from "@/components/Icons";
 import {socialMediaLinks} from "@/app/[locale]/utils/social_media_list";
 import {navList} from "@/app/[locale]/utils/navList";
-import Link from "next/link";
+import {Link} from "@/i18n/routing";
 import {useTranslations} from 'next-intl';
 
 

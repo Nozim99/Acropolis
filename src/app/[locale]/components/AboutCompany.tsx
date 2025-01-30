@@ -5,6 +5,7 @@ import Image from "next/image";
 import Title from "@/components/Title";
 import {MiniOrnament} from "@/components/Icons";
 import {useTranslations} from 'next-intl';
+import {Link} from "@/i18n/routing";
 
 const AboutSection = () => {
     const t = useTranslations("Home");
@@ -72,15 +73,19 @@ const AboutSection = () => {
                                 {t("about_company_description_2")}
                             </motion.p>
                         </div>
-                        <motion.button
-                            className={"relative py-[6px] block mx-auto px-[30px] mt-[10px] bg-[var(--orange)] hover:bg-yellow-500 rounded-full font-semibold transition-all sm:px-[50px] sm:py-[10px] sm:text-xl xl:py-[10px] xl:w-[360px] xl:mt-[10px] xl:mx-0"}
-                            initial={{opacity: 0, top: 50}}
-                            whileInView={{opacity: 1, top: 0}}
-                            viewport={{once: true}}
-                            transition={{ease: "easeOut", duration: 0.6}}
-                        >
-                            {t("find_out_more")}
-                        </motion.button>
+                        <div className={"flex justify-center mt-[10px] xl:mt-[10px]"}>
+                            <Link href={"/about-us"}>
+                                <motion.button
+                                    className={"relative py-[6px] block mx-auto px-[30px] bg-[var(--orange)] hover:bg-yellow-500 rounded-full font-semibold transition-all sm:px-[50px] sm:py-[10px] sm:text-xl xl:py-[10px] xl:w-[360px] xl:mx-0"}
+                                    initial={{opacity: 0, top: 50}}
+                                    whileInView={{opacity: 1, top: 0}}
+                                    viewport={{once: true}}
+                                    transition={{ease: "easeOut", duration: 0.6}}
+                                >
+                                    {t("find_out_more")}
+                                </motion.button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

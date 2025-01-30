@@ -52,7 +52,7 @@ const SectionCategories = ({servicesData}: PropsType) => {
 
 
                 <motion.div
-                    className={"hidden lg:flex justify-end flex-1 items-end"}
+                    className={"hidden lg:flex justify-end flex-1 items-center"}
                     initial={{opacity: 0, scale: 0.8}}
                     whileInView={{opacity: 1, scale: 1}}
                     viewport={{once: true}}

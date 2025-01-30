@@ -3,6 +3,7 @@
 import {motion} from "framer-motion";
 import Image from "next/image";
 import {useTranslations} from 'next-intl';
+import {Link} from "@/i18n/routing";
 
 
 const ServicesSection = () => {
@@ -55,15 +56,19 @@ const ServicesSection = () => {
                             <span className={"font-medium text-2xl"}>{item.title}</span>
                         </motion.li>
                     ))}</ul>
-                <motion.button
-                    initial={{opacity: 0, top: 100, scale: 0.7}}
-                    whileInView={{opacity: 1, top: 0, scale: 1}}
-                    viewport={{once: true}}
-                    transition={{ease: "easeOut", duration: 0.8}}
-                    className={"bg-[var(--orange)] rounded-[24px] mx-auto px-[30px] py-[10px] font-bold text-lg block mt-[23px] hover:bg-yellow-500 transition-all sm:px-[37px] lg:text-xl lg:py-[16px]"}
-                >
-                    {t("find_out_more")}
-                </motion.button>
+                <div className={"flex justify-center mt-[23px]"}>
+                    <Link href={"/prices"}>
+                        <motion.button
+                            initial={{opacity: 0, top: 100, scale: 0.7}}
+                            whileInView={{opacity: 1, top: 0, scale: 1}}
+                            viewport={{once: true}}
+                            transition={{ease: "easeOut", duration: 0.8}}
+                            className={"bg-[var(--orange)] rounded-[24px] mx-auto px-[30px] py-[10px] font-bold text-lg block hover:bg-yellow-500 transition-all sm:px-[37px] lg:text-xl lg:py-[16px]"}
+                        >
+                            {t("find_out_more")}
+                        </motion.button>
+                    </Link>
+                </div>
             </div>
         </section>
     )
