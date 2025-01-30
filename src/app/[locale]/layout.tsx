@@ -8,6 +8,7 @@ import Navbar from "@/app/[locale]/components/Navbar";
 import Footer from "@/app/[locale]/components/Footer";
 import {Locale, routing} from "@/i18n/routing";
 import {notFound} from "next/navigation";
+import Head from "next/head";
 
 
 const inter = Inter({
@@ -48,7 +49,12 @@ export default async function RootLayout({
     }
 
     return (
-        <html lang={locale}>
+        <html
+            lang={locale}
+        >
+        <Head>
+            <link rel="icon" href="/assets/title-logo.png" />
+        </Head>
         <body
             className={`${inter.variable} antialiased `}
         >

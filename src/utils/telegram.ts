@@ -4,8 +4,10 @@ import {generateMessage} from "./generateMsg";
 
 interface MessageData {
     name?: string,
+    phone?: string,
     email?: string,
-    company?: string
+    company?: string,
+    description?: string,
 }
 
 

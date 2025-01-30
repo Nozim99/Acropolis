@@ -1,0 +1,3 @@
+rm -rf /root/projects/Acropolis/frontend/.next
+scp -r .next root@YOUR_SERVER_IP:/root/projects/Acropolis/frontend
+scp -r .next root@45.132.50.50:/root/projects/Acropolis/frontend

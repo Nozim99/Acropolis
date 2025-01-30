@@ -69,6 +69,17 @@ const Index = () => {
                             transition={{ease: "easeOut", duration: 0.8}}
                         />
                         <motion.input
+                            // placeholder={t("mail")}
+                            placeholder={t("phone")}
+                            className={"input relative"}
+                            type="text"
+                            id={"phone"}
+                            initial={{opacity: 0, left: 50, scale: 0.7}}
+                            whileInView={{opacity: 1, left: 0, scale: 1}}
+                            viewport={{once: true}}
+                            transition={{ease: "easeOut", duration: 0.8}}
+                        />
+                        <motion.input
                             placeholder={t("mail")}
                             className={"input relative"}
                             type="text"
@@ -88,6 +99,24 @@ const Index = () => {
                             viewport={{once: true}}
                             transition={{ease: "easeOut", duration: 0.8}}
                         />
+                        <div className={""}>
+                            <label
+                                htmlFor={"description"}
+                                className={"text-[#9CA3AF] block my-[10px] md:my-[12px] lg:pt-[14px] xl:py-[16px] pl-[8px] md:pl-[10px] lg:pl-[12px] xl:pt-[14px]"}
+                            >
+                                {t("form_description")}
+                            </label>
+                            <motion.textarea
+                                placeholder={''}
+                                className={`relative input w-full border-t border-x rounded`}
+                                id={"textarea_description"}
+                                initial={{opacity: 0, left: 50, scale: 0.7}}
+                                whileInView={{opacity: 1, left: 0, scale: 1}}
+                                viewport={{once: true}}
+                                transition={{ease: "easeOut", duration: 0.8}}
+                                rows={5}
+                            />
+                        </div>
                         <FormButton/>
                     </form>
                 </div>

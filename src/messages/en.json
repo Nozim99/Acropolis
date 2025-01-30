@@ -38,6 +38,8 @@
     "feedback_3": "How we help foster innovation",
     "name": "Name",
     "mail": "Email",
+    "phone": "Phone number",
+    "form_description": "Leave your questions",
     "company_name": "Company Name",
     "send": "Send",
     "social_media": "Social Media",

@@ -25,15 +25,19 @@ const {
 export const generateMessage = (
     {
         name,
+        phone,
         email,
         company,
-    }: { name?: string, email?: string, company?: string }
+        description,
+    }: { name?: string, phone?: string; email?: string, company?: string, description?: string }
 ) => {
     return `
   🆕 Зарегистрирован новый клиент❗️
   
   👤 Имя: ${name || "..."}
+  ☎️ Телефон: ${phone || "..."}
   📧 Электронная почта: ${email || "..."}
   🏢 Название компании: ${company || "..."}
+  📝 Описание: ${description || "..."}
   ⏰ Время: ${day}-${month}, ${hours}:${minute}`
 }

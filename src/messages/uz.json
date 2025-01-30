@@ -38,6 +38,8 @@
     "feedback_3": "Innovatsiyalarni rivojlantirishga yordamimiz",
     "name": "Ism",
     "mail": "Elektron pochta",
+    "phone": "Telefon nomer",
+    "form_description": "Savollaringizni qoldiring",
     "send": "Yuborish",
     "company_name": "Kompaniya nomi",
     "social_media": "Ijtimoiy tarmoqlar",

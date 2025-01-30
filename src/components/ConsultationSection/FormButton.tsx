@@ -13,13 +13,17 @@ const FormButton = () => {
         setIsLoading(true)
 
         const nameInput = document.getElementById("name") as HTMLInputElement;
+        const phoneInput = document.getElementById("phone") as HTMLInputElement;
         const emailInput = document.getElementById("email") as HTMLInputElement;
         const companyInput = document.getElementById("company") as HTMLInputElement;
+        const descriptionInput = document.getElementById("textarea_description") as HTMLTextAreaElement;
 
         sendMessage({
             name: nameInput.value,
+            phone: phoneInput.value,
             email: emailInput.value,
             company: companyInput.value,
+            description: descriptionInput.value
         })
             .then(() => {
                 setIsLoading(true);
@@ -29,8 +33,10 @@ const FormButton = () => {
             })
 
         nameInput.value = "";
+        phoneInput.value = "";
         emailInput.value = "";
         companyInput.value = "";
+        descriptionInput.value = "";
 
     }
 
