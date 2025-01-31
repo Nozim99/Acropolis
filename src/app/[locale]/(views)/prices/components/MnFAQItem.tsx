@@ -57,7 +57,7 @@ const MnFAQItem = ({isDark, itemNumber, title, description, zIndex, index}: IPro
             <div className={`${isOpen ? "block" : "hidden"} absolute inset-0 cursor-pointer`}></div>
             <div
                 style={{zIndex}}
-                className={`${isOpen ? "max-h-[340px]" : "max-h-0"} ${isDark ? "bg-[var(--darkBlue)]" : "bg-[#D8A227]"} transition-all duration-[400ms] absolute w-full left-0 overflow-hidden`}
+                className={`${isOpen ? "max-h-[340px]" : "max-h-0"} ${isDark ? "bg-[var(--darkBlue)]" : "bg-[#D8A227]"} rounded-b-[10px] transition-all duration-[400ms] absolute w-full left-0 overflow-hidden`}
             >
                 <p ref={itemRef}
                    className={`${isDark ? "border-[#D8A227]" : "border-[var(--darkBlue)]"} text-sm top-full p-[8px] border-x-[3px] border-b-[3px] rounded-b-[10px] sm:text-base sm:p-[10px] md:p-[14px] md:text-lg lg:text-xl`}>

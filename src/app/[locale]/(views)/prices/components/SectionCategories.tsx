@@ -58,13 +58,16 @@ const SectionCategories = ({servicesData}: PropsType) => {
                     viewport={{once: true}}
                     transition={{duration: 0.7}}
                 >
-                    <Image
-                        className={"bg-[var(--darkBlue)] rounded-full mr-[120px]"}
-                        src={"/assets/prices-categories.png"}
-                        alt={"categories image"}
-                        width={455}
-                        height={455}
-                    />
+                    {/*<div className={"rounded-full bg-[var(--darkBlue)] mr-[120px] w-[523px] h-[523px]"}>*/}
+                    <div className={"rounded-full bg-[var(--darkBlue)] mr-[120px] w-[380px] h-[380px] xl:w-[523px] xl:h-[523px] overflow-hidden relative"}>
+                        <Image
+                            className={"w-[320px] h-[320px] absolute top-1/2 -translate-y-1/2 left-0 xl:h-[442px] xl:w-[425px]"}
+                            src={"/assets/solutions.png"}
+                            alt={"categories image"}
+                            width={455}
+                            height={455}
+                        />
+                    </div>
                 </motion.div>
 
                 <div className={"flex-1"}>
