@@ -6,7 +6,7 @@ import {useEffect, useRef, useState} from "react";
 const MnFAQItem = ({isYellow = true, title, description, index, zIndex}: {
     isYellow: boolean,
     title: string,
-    description: string,
+    description: string[],
     index: number,
     zIndex: number,
 }) => {
@@ -42,10 +42,16 @@ const MnFAQItem = ({isYellow = true, title, description, index, zIndex}: {
                 style={{zIndex: 11 + (zIndex || 0)}}
                 className={`${isOpen ? "max-h-[340px]" : "max-h-0"} ${isYellow ? "bg-[#D8A227]" : "bg-[#979797]"} transition-all duration-[400ms] absolute w-full left-0 rounded-b-[10px] overflow-hidden`}
             >
-                <p ref={itemRef}
+                <div ref={itemRef}
                    className={`text-sm sm:text-base md:text-lg xl:text-xl top-full p-[8px] sm:p-[10px] md:p-[14px] border-t-[2px]`}>
-                    {description}
-                </p>
+                    {
+                        description?.map((d_item, index) => (
+                            <p key={index}>
+                                {d_item}
+                            </p>
+                        ))
+                    }
+                </div>
             </div>
         </div>
     )

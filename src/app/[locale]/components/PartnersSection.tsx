@@ -5,22 +5,6 @@ import {MiniOrnament} from "@/components/Icons";
 import {useTranslations} from 'next-intl';
 
 
-// const partners_images = [
-//     'commvault.jpeg',
-//     'Fortinet .png',
-//     'Hitachi.png',
-//     'Juniper_Networks.png',
-//     'Lenovo.png',
-//     'Nutanix.jpeg',
-//     'Oracle.png',
-//     'Red_Hat.svg',
-//     'tenable.png',
-//     'trend_micro.jpeg',
-//     'veeam.png',
-//     'vertiv.jpeg'
-// ]
-
-
 interface PropsType {
     clientsData?: {
         _id: string;

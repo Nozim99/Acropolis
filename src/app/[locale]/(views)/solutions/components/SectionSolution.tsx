@@ -8,7 +8,15 @@ import {MiniOrnament} from "@/components/Icons";
 import {useTranslations} from 'next-intl';
 
 
-export const SectionSolution = () => {
+interface IProps {
+    solutionsData: {
+        category: 'it-infrastructure' | 'system-software' | 'information-security';
+        title: string;
+        description: string[];
+    }[]
+}
+
+export const SectionSolution = ({solutionsData}: IProps) => {
     const t = useTranslations("Home");
 
     const statisticList = [
@@ -17,139 +25,26 @@ export const SectionSolution = () => {
             title: t("solution_1"),
             width: 118,
             height: 113,
-            items: [
-                {
-                    title: t("solution_title_1"),
-                    description: t("solution_description_1"),
-                    isYellow: true,
-                },
-                {
-                    title: t("solution_title_4"),
-                    description: t("solution_description_4"),
-                    isYellow: false,
-                },
-                {
-                    title: t("solution_title_7"),
-                    description: t("solution_description_7"),
-                    isYellow: true,
-                },
-                {
-                    title: t("solution_title_10"),
-                    description: t("solution_description_10"),
-                    isYellow: false,
-                },
-            ]
+            key: "it-infrastructure",
+            items: solutionsData.filter(item => item.category === 'it-infrastructure'),
         },
         {
             img: "/assets/pc-setting.png",
             title: t("solution_2"),
             width: 123,
             height: 115,
-            items: [
-                {
-                    title: t("solution_title_2"),
-                    description: t("solution_description_2"),
-                    isYellow: true,
-                },
-                {
-                    title: t("solution_title_5"),
-                    description: t("solution_description_5"),
-                    isYellow: false,
-                },
-                {
-                    title: t("solution_title_8"),
-                    description: t("solution_description_8"),
-                    isYellow: true,
-                },
-                {
-                    title: t("solution_title_11"),
-                    description: t("solution_description_11"),
-                    isYellow: false,
-                },
-            ]
+            key: 'system-software',
+            items: solutionsData.filter(item => item.category === 'system-software'),
         },
         {
             img: "/assets/world-security.png",
             title: t("solution_3"),
             width: 122,
             height: 122,
-            items: [
-                {
-                    title: t("solution_title_3"),
-                    description: t("solution_description_3"),
-                    isYellow: true,
-                },
-                {
-                    title: t("solution_title_6"),
-                    description: t("solution_description_6"),
-                    isYellow: false,
-                },
-                {
-                    title: t("solution_title_9"),
-                    description: t("solution_description_9"),
-                    isYellow: true,
-                },
-            ]
+            key: 'information-security',
+            items: solutionsData.filter(item => item.category === 'information-security'),
         },
     ]
-
-    const solutionsList = [
-        {
-            title: t("solution_title_1"),
-            description: t("solution_description_1"),
-            isYellow: true,
-        },
-        {
-            title: t("solution_title_2"),
-            description: t("solution_description_2"),
-            isYellow: true,
-        },
-        {
-            title: t("solution_title_3"),
-            description: t("solution_description_3"),
-            isYellow: true,
-        },
-        {
-            title: t("solution_title_4"),
-            description: t("solution_description_4"),
-            isYellow: false,
-        },
-        {
-            title: t("solution_title_5"),
-            description: t("solution_description_5"),
-            isYellow: false,
-        },
-        {
-            title: t("solution_title_6"),
-            description: t("solution_description_6"),
-            isYellow: false,
-        },
-        {
-            title: t("solution_title_7"),
-            description: t("solution_description_7"),
-            isYellow: true,
-        },
-        {
-            title: t("solution_title_8"),
-            description: t("solution_description_8"),
-            isYellow: true,
-        },
-        {
-            title: t("solution_title_9"),
-            description: t("solution_description_9"),
-            isYellow: true,
-        },
-        {
-            title: t("solution_title_10"),
-            description: t("solution_description_10"),
-            isYellow: false,
-        },
-        {
-            title: t("solution_title_11"),
-            description: t("solution_description_11"),
-            isYellow: false,
-        },
-    ];
 
 
     return (
@@ -166,7 +61,7 @@ export const SectionSolution = () => {
                     className={"hidden lg:block"}
                     title={t("solution")}
                 />
-                <ul className={"grid grid-cols-1 gap-y-[20px] lg:grid-cols-3 lg:gap-[15px] xl:gap-0 "}>
+                <ul className={"grid grid-cols-1 gap-y-[20px] lg:grid-cols-3 lg:gap-[15px] xl:gap-[10px] "}>
                     {statisticList.map((item, index) => (
                         <li key={index} className={"mb-[30px]"}>
                             <motion.div
@@ -197,14 +92,16 @@ export const SectionSolution = () => {
                                 <span
                                     className={"font-medium text-lg flex-1 sm:text-center lg:text-start lg:text-xl xl:text-2xl"}>{item.title}</span>
                             </motion.div>
-                            <div className={"grid gap-[8px] lg:hidden"}>
-                                {item.items.map((item, index) => (
+                            {/*<div className={"grid gap-[8px] lg:hidden"}>*/}
+                            <div className={"grid gap-[8px] mt-[10px] xl:mt-[16px]"}>
+                                {item.items.map((i_item, i_index) => (
                                     <MnFAQItem
-                                        key={index}
-                                        index={index}
-                                        zIndex={11 + statisticList.length - index}
-                                        {...item}
-                                        description={item.description}
+                                        key={i_index}
+                                        index={i_index}
+                                        zIndex={11 + statisticList.length - i_index}
+                                        description={i_item.description}
+                                        title={i_item.title}
+                                        isYellow={i_index % 2 == 0}
                                     />
                                 ))}
                             </div>
@@ -212,16 +109,17 @@ export const SectionSolution = () => {
                     ))}
                 </ul>
 
-                <div className={"grid-cols-1 gap-x-[28px] gap-y-[11px] md:grid-cols-2 lg:grid-cols-3 hidden lg:grid"}>
-                    {solutionsList.map((item, index) => (
-                        <MnFAQItem
-                            key={index}
-                            index={index}
-                            zIndex={11 + statisticList.length - index}
-                            {...item}
-                            description={item.description}
-                        />
-                    ))}</div>
+                {/*<div className={"grid-cols-1 gap-x-[28px] gap-y-[11px] md:grid-cols-2 lg:grid-cols-3 hidden lg:grid"}>*/}
+                {/*    {solutionsData.map((item, index) => (*/}
+                {/*        <MnFAQItem*/}
+                {/*            key={index}*/}
+                {/*            index={index}*/}
+                {/*            zIndex={11 + statisticList.length - index}*/}
+                {/*            description={item.description}*/}
+                {/*            title={item.title}*/}
+                {/*            isYellow={index % 2 == 0}*/}
+                {/*        />*/}
+                {/*    ))}</div>*/}
             </div>
         </section>
     )
