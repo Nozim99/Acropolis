@@ -6,8 +6,7 @@ import {NextIntlClientProvider} from "next-intl";
 import {getMessages} from 'next-intl/server'
 import Navbar from "@/app/[locale]/components/Navbar";
 import Footer from "@/app/[locale]/components/Footer";
-import {Locale, routing} from "@/i18n/routing";
-import {notFound} from "next/navigation";
+import {Locale, redirect, routing} from "@/i18n/routing";
 import Head from "next/head";
 
 
@@ -40,12 +39,10 @@ export default async function RootLayout({
 }>) {
     const {locale} = await params;
 
-    // Providing all messages to the client
-    // side is the easiest way to get started
     const messages = await getMessages();
 
     if (!routing.locales.includes(locale as Locale)) {
-        notFound();
+        redirect({locale: "ru", href: "/"})
     }
 
     return (
@@ -53,7 +50,7 @@ export default async function RootLayout({
             lang={locale}
         >
         <Head>
-            <link rel="icon" href="/assets/title-logo.png" />
+            <link rel="icon" href="/assets/title-logo.png"/>
         </Head>
         <body
             className={`${inter.variable} antialiased `}
