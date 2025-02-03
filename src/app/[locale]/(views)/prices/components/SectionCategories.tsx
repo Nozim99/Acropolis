@@ -40,7 +40,7 @@ const SectionCategories = ({servicesData}: PropsType) => {
 
     return (
         <section className={"bg-[var(--darkBlue)] lg:bg-white relative "}>
-            <div className={"absolute top-0 bottom-0 left-0 w-[45%] prices_categories_bg hidden lg:block"}></div>
+            <div className={"absolute top-0 bottom-0 left-0 w-[45%] hidden lg:block"}></div>
             <div
                 className={"mContainer relative flex justify-center gap-x-[25px] pt-[30px] sm:pt-[35px] md:pt-[43px] pb-[20px]"}>
 
@@ -59,7 +59,7 @@ const SectionCategories = ({servicesData}: PropsType) => {
                     transition={{duration: 0.7}}
                 >
                     {/*<div className={"rounded-full bg-[var(--darkBlue)] mr-[120px] w-[523px] h-[523px]"}>*/}
-                    <div className={"rounded-full bg-[var(--darkBlue)] mr-[120px] w-[380px] h-[380px] xl:w-[523px] xl:h-[523px] overflow-hidden relative"}>
+                    <div className={"rounded-full bg-[var(--darkBlue)] mr-[120px] w-[380px] h-[380px] xl:w-[523px] xl:h-[523px] overflow-hidden relative bg_shadow"}>
                         <Image
                             className={"w-[320px] h-[320px] absolute top-1/2 -translate-y-1/2 left-0 xl:h-[442px] xl:w-[425px]"}
                             src={"/assets/solutions.png"}
@@ -72,7 +72,7 @@ const SectionCategories = ({servicesData}: PropsType) => {
 
                 <div className={"flex-1"}>
                     <motion.h2
-                        className={"hidden lg:block title text-center lg:text-start lg:text-[var(--darkBlue)] mb-[45px]"}
+                        className={"title text-center  lg:text-start lg:text-[var(--darkBlue)] mb-[20px] sm:mb-[30px] lg:mb-[45px]"}
                         initial={{opacity: 0, scale: 0.7}}
                         whileInView={{opacity: 1, scale: 1}}
                         viewport={{once: true}}
